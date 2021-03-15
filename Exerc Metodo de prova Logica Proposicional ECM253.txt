@@ -1,0 +1,277 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{fullpage}
+\usepackage{enumitem,amssymb,amsmath,gensymb}
+\usepackage{indentfirst}
+\usepackage{parskip}
+\setlength{\parskip}{1em}
+\usepackage[margin=2cm]{geometry}
+
+\newcommand{\vv}{\texttt{V}}
+\newcommand{\ff}{\texttt{F}}
+
+\title{ECM253 – Linguagens Formais, Autômatos e Compiladores
+
+\textbf{Lista de Exercícios}
+
+Métodos de prova em lógica proposicional}
+\author{Marco Furlan}
+\date{Fevereiro,2021}
+
+\begin{document}
+    
+    \maketitle
+    {\large Aluno:}\\
+    {\large Rodrigo Machado Pedreira \hspace{1cm} 18.01569-7}
+    
+    \bigskip
+        \begin{enumerate} % Perguntas Lista 2 Métodos Log. Propo...
+        \item Utilizar o \textbf{algoritmo} TestarTautologia para provar que as expressões a         seguir são tautologias: % P. 2.1
+            
+            \medskip Obs. do aluno: Considerar para todos os itens abaixo que quando um elemento apresentar dois valores verdade diferentes as expressões são tautologias. Já que estamos tentando prova las falsas esse acontecimento é uma inconsistência, não é possível algo ser verdadeiro e falso ao mesmo tempo em lógica proposicional, portanto é falso que não são tautologias, consequentemente é verdadeiro que elas são tautologias.\medskip\\
+            X = Desconhecido
+            
+            \medskip
+            \begin{enumerate} % Itens P. 2.1
+                \setlength{\columnsep}{.5cm}
+                \item $[\neg B \wedge (A \rightarrow B)] \rightarrow \neg A$ % a
+                
+                    \begin{minipage}{0.15\textwidth} % Tabela a
+                        \begin{tabular}[t]{@{}ccc@{}}\\
+                            \multicolumn{1}{c|}{i} & $A$ & \multicolumn{1}{|c}{$B$} \\ \midrule % 1
+                            \multicolumn{1}{c|}{0} & $X$ & \multicolumn{1}{|c}{$X$} \\ \midrule % 2
+                            \multicolumn{1}{c|}{1} & \vv & \multicolumn{1}{|c}{\ff} \\ \midrule % 3
+                            \multicolumn{1}{c|}{2} & \vv & \multicolumn{1}{|c}{\vv} \\  % 4
+                        \end{tabular}
+                    \end{minipage} % Tabela a
+                    \begin{minipage}{0.57\textwidth} % Escrita a
+                        \begin{multicols}{3}
+                            \begin{flushleft}
+                                {\small \textbf{Assumindo:}\\
+                                $[\neg B \wedge (A \rightarrow B)] = \vv$\\
+                                $(\neg A) = \ff$\\
+                                \columnbreak
+                                \textbf{Então:}\\
+                                \begin{enumerate}[label=\arabic*.] % Iterações a
+                                    \item $B = \ff$\\
+                                        $(A \rightarrow B) = \vv$\\
+                                        $A = \vv$\\
+                                        \columnbreak
+                                    \item $B = \vv$\\
+                                \end{enumerate}} % Iterações a
+                                É tautologia!
+                            \end{flushleft}
+                         \end{multicols}
+                    \end{minipage} % Escrita a
+                    \medskip
+                \item $[(A \rightarrow B) \wedge A] \rightarrow B$ % b
+            
+                    \begin{minipage}{0.15\textwidth} % Tabela b
+                        \begin{tabular}[t]{@{}ccc@{}}\\
+                            \multicolumn{1}{c|}{i} & $A$ & \multicolumn{1}{|c}{$B$} \\ \midrule % 1
+                            \multicolumn{1}{c|}{0} & $X$ & \multicolumn{1}{|c}{\ff} \\ \midrule % 2
+                            \multicolumn{1}{c|}{0} & \vv & \multicolumn{1}{|c}{\ff} \\ \midrule % 3
+                            \multicolumn{1}{c|}{2} & \vv & \multicolumn{1}{|c}{\vv} \\  % 4
+                        \end{tabular}
+                    \end{minipage} % Tabela b
+                    \begin{minipage}{0.57\textwidth} % Escrita b
+                        \begin{multicols}{3}
+                            \begin{flushleft}
+                                {\small \textbf{Assumindo:}\\
+                                $[(A \rightarrow B) \wedge A] = \vv$\\
+                                $B = \ff$\\
+                                \columnbreak
+                                \textbf{Então:}\\
+                                \begin{enumerate}[label=\arabic*.] % Iterações b
+                                    \item $(A \rightarrow B) = \vv$\\
+                                        $A = \vv$\\
+                                        \columnbreak
+                                    \item $B = \vv$
+                                \end{enumerate}} % Iterações b
+                                É tautologia!
+                            \end{flushleft}
+                        \end{multicols}
+                    \end{minipage} % Escrita b
+                    \pagebreak[4]
+%TODO RESPONDER                \item $(A \vee B) \wedge \neg A \rightarrow B$ % c
+            
+                    \begin{minipage}{0.16\textwidth} % Tabela c
+                        \begin{tabular}[t]{@{}cccc@{}}\\
+                            \multicolumn{1}{c|}{i} & $A$ & \multicolumn{2}{|c}{$B$} \\ \midrule % 1
+                            \multicolumn{1}{c|}{0} & \ff & \multicolumn{2}{|c}{$X$} \\ \midrule % 2
+                            \multicolumn{1}{c|}{1} & \ff & \multicolumn{2}{|c}{$X$} \\ \midrule % 3
+                            \multicolumn{1}{c|}{2} & \vv & \multicolumn{1}{|c}{\ff} & \multicolumn{1}{c}{\vv} \\ % 4
+                        \end{tabular}
+                    \end{minipage} % Tabela c
+                    \begin{minipage}{0.57\textwidth} % Escrita c
+                        \begin{multicols}{3}
+                            \begin{flushleft}
+                                {\small \textbf{Assumindo:}\\
+                                $(A \wedge B) \wedge \neg B = \vv$\\
+                                $A = \ff$\\
+                                \columnbreak
+                                \textbf{Então:}
+                                \begin{enumerate}[label=\arabic*.] % Iterações c
+                                    \item $(A \wedge B) = \vv$\\
+                                        $(\neg B) = \vv$ \columnbreak
+                                    \item $B = \ff$\\
+                                        $A = \vv$\\
+                                        $B = \vv$
+                                \end{enumerate}} % Iterações c
+                            \end{flushleft}
+                        \end{multicols}
+                        \begin{flushright} É tautologia!\end{flushright}
+                    \end{minipage} % Escrita c
+                    \medskip
+                \item $(A \wedge B) \wedge \neg B \rightarrow A$ % d
+            
+                    \begin{minipage}{0.16\textwidth} % Tabela d
+                        \begin{tabular}[t]{@{}cccc@{}}\\
+                            \multicolumn{1}{c|}{i} & $A$ & \multicolumn{2}{|c}{$B$} \\ \midrule % 1
+                            \multicolumn{1}{c|}{0} & \ff & \multicolumn{2}{|c}{$X$} \\ \midrule % 2
+                            \multicolumn{1}{c|}{1} & \ff & \multicolumn{2}{|c}{$X$} \\ \midrule % 3
+                            \multicolumn{1}{c|}{2} & \vv & \multicolumn{1}{|c}{\ff} & \multicolumn{1}{c}{\vv} \\ % 4
+                        \end{tabular}
+                    \end{minipage} % Tabela d
+                    \begin{minipage}{0.57\textwidth} % Escrita d
+                        \begin{multicols}{3}
+                            \begin{flushleft}
+                                {\small \textbf{Assumindo:}\\
+                                $(A \wedge B) \wedge \neg B = \vv$\\
+                                $A = \ff$\\
+                                \columnbreak
+                                \textbf{Então:}
+                                \begin{enumerate}[label=\arabic*.] % Iterações d
+                                    \item $(A \wedge B) = \vv$\\
+                                        $(\neg B) = \vv$ \columnbreak
+                                    \item $B = \ff$\\
+                                        $A = \vv$\\
+                                        $B = \vv$
+                                \end{enumerate}} % Iterações d
+                            \end{flushleft}
+                        \end{multicols}
+                        \begin{flushright} É tautologia!\end{flushright}
+                    \end{minipage} % Escrita d
+            \end{enumerate} % Itens P. 2.1
+            \bigskip
+        \item \textbf{Traduzir} em \textbf{Lógica Proposicional} os \textbf{argumentos} apresentados a \textbf{seguir} e, \textbf{depois}, \textbf{provar} que são \textbf{argumentos válidos} utilizando \textbf{sequências de prova} com \textbf{regras de equivalência} e \textbf{regras de inferência} a partir de \textbf{hipóteses} (como apresentado em aula). Empregar os símbolos proposicionais indicados. %P. 2.2
+        
+            \begin{enumerate} % Itens P. 2.2
+                \setlength{\columnsep}{1cm}
+                \item A colheita é boa, mas não há água suficiente. Se tivesse bastante chuva ou não tivesse bastante sol, então haveria água suficiente. Portanto, a colheita é boa e há bastante sol. (C, A, H, S) % a
+                
+                    \smallskip
+                    \textbf{Resposta:} \begin{center}$[(C \wedge \neg A) \wedge [(H \vee \neg S) \rightarrow A]] \rightarrow (C \wedge S)$\end{center}
+                    \textbf{Prova:}
+                    \begin{multicols}{2}
+                        \begin{enumerate}[label=\arabic*.] % Provas a
+                            \item $(C \wedge \neg A)$ \dotfill (hip.) % 1
+                            \item $[(H \vee \neg S) \rightarrow A]$ \dotfill (hip.)% 2
+                            \smallskip
+                            \item $C$ \dotfill 1, sim % 3
+                            \item $\neg A$ \dotfill 1, sim % 4
+                            \item $\neg(H \vee \neg S)$ \dotfill 2,4 mp % 5
+                            \item $\neg H \wedge S$ \dotfill5, dm % 6
+                            \item $S$ \dotfill6, sim % 7
+                            \item $(C \wedge S)$ {\scriptsize$ _{\qedsymbol}$} \dotfill3,7, con % 8
+                        \end{enumerate} % Provas a
+                    \end{multicols}
+                    \medskip
+                \item Rússia tinha um poder superior, e ou a França não era forte ou Napoleão cometeu um erro. Napoleão não cometeu um erro, mas se o exército não tivesse falhado, a França seria forte. Portanto, o exército falhou e a Rússia tinha um poder superior. (R, F, N, E) % b
+                
+                    \smallskip
+                    \textbf{Resposta:} \begin{center}$R\wedge(\neg F \vee N) \wedge [\neg N \wedge    (\neg E \rightarrow F)] \rightarrow (E \wedge R)$\end{center}
+                    \textbf{Prova:}
+                    \begin{multicols}{2}
+                        \begin{enumerate}[label=\arabic*.] % Provas b
+                            \item $R$ \dotfill (hip.) % 1
+                            \item $\neg F \vee N$ \dotfill(hip.) % 2
+                            \item $\neg N \wedge (\neg E \rightarrow F)$ \dotfill(hip.)% 3
+                            \vspace{3pt}
+                            \item $\neg N$ \dotfill 3, sim % 4
+                            \item $F \rightarrow N$ \dotfill 2, imp % 5
+                            \item $\neg F$ \dotfill 5,4 mt % 6
+                            \item $\neg E \rightarrow F$ \dotfill 3, sim % 7
+                            \item $E$ \dotfill 7,6, mt % 8
+                            \item $E \wedge R$ {\scriptsize$ _{\qedsymbol}$} \dotfill 8,1, con % 9
+                        \end{enumerate} % Provas b
+                    \end{multicols}
+                    \medskip
+                \item Não é verdade que se as taxas de eletricidade subirem, o consumo diminuirá, nem é verdade que novas usinas de energia serão construídas ou as contas não serão atrasadas. Portanto o consumo não diminuirá e as contas serão atrasadas. (T, C, U, Co) % c
+                
+                    \smallskip
+                    \textbf{Resposta:} \begin{center}$\neg(T \rightarrow C) \wedge \neg(U \vee \neg Co) \rightarrow (\neg C \wedge Co)$\end{center}
+                    \textbf{Prova:} $(\neg C \wedge Co)$
+                    \begin{multicols}{2}
+                        \begin{enumerate}[label=\arabic*.] % Provas c
+                            \item $\neg(T \rightarrow C)$ \dotfill (hip.) % 1
+                            \item $\neg(U \vee \neg Co)$ \dotfill (hip.)% 2
+                            \vspace{3pt}
+                            \item $\neg U \wedge Co$ \dotfill 2, dm % 3
+                            \item $Co$ \dotfill 3, sim % 4
+                            \item $\neg(\neg T \vee C)$ \dotfill 1, imp % 5
+                            \item $T \wedge \neg C$ \dotfill 5, dm % 6
+                            \item $\neg C$ \dotfill 6, sim % 7
+                            \item $\neg C \wedge Co$ {\scriptsize$ _{\qedsymbol}$} \dotfill 7,4, con % 8
+                        \end{enumerate} % Provas c
+                    \end{multicols}
+                    \medskip
+                \item Se José pegou as joias ou a Sra. Krasov mentiu, então ocorreu um crime. O sr. Krasov não estava na cidade. Se ocorreu um crime, então o sr. Krasov estava na cidade. Portanto José não pegou as joias. (J, M, C, E). % d
+                
+                    \smallskip
+                    \textbf{Resposta:} \begin{center}$[[(J \vee M) \rightarrow C] \wedge \neg E \wedge (C \rightarrow E)] \rightarrow \neg J $\end{center}
+                    \textbf{Prova:}
+                    \begin{multicols}{2}
+                        \begin{enumerate}[label=\arabic*.] % Provas d
+                            \item $(J \vee M) \rightarrow C$ \dotfill (hip.) % 1
+                            \item $\neg E$ \dotfill (hip.) % 2
+                            \item $C \rightarrow E$ \dotfill (hip.)% 3
+                            \smallskip
+                            \item $\neg C$ \dotfill 3,2, mt % 4
+                            \item $\neg(J \vee M)$ \dotfill 1,4,mt % 5
+                            \item $\neg J \wedge \neg M$ \dotfill 5, dm % 6
+                            \item $\neg J$ {\scriptsize$ _{\qedsymbol}$} \dotfill 6, sim % 7
+                        \end{enumerate} % Provas d
+                    \end{multicols}
+                    \medskip
+            \end{enumerate} % Itens P. 2.2
+            \bigskip
+            \pagebreak[4]
+        \item Estabelecer a validade (válido ou inválido) do argumento por dedução (sequência de prova):%P.2.3
+        
+            \setlength{\columnsep}{1cm}
+            \smallskip
+            \begin{align*}
+                ((P \rightarrow Q) \wedge (Q \rightarrow (R \wedge S)) \wedge (\neg R \vee (\neg T \vee U)) \wedge (P \wedge T)) \rightarrow U
+            \end{align*}
+            \medskip
+            \begin{multicols}{2}
+                \begin{enumerate}[label=\arabic*.] % Provas Q. 3
+                    \item $P \rightarrow Q$ \dotfill(hip.) % 1
+                    \item $Q \rightarrow (R \wedge S)$ \dotfill(hip.) % 2
+                    \item $\neg R \vee (\neg T \vee U)$ \dotfill(hip.) % 3
+                    \item $P \wedge T$ \dotfill(hip.)% 4
+                    \smallskip
+                    \item $T$ \dotfill 4, sim % 5
+                    \item $P$ \dotfill 4, sim % 6
+                    \item $Q$ \dotfill 1,6, mp % 7
+                    \item $\neg Q \vee (R \wedge S)$ \dotfill 2, imp % 8
+                    \item $(\neg Q \vee R) \wedge (\neg Q \vee S)$ \dotfill 8, dis % 9
+                    \item $\neg Q \vee R$ \dotfill 9, sim % 10
+                    \item $Q \rightarrow R$ \dotfill 10, imp % 11
+                    \item $R$ \dotfill 11,7, mp % 12
+                    \item $R \rightarrow (\neg T \vee U)$ \dotfill 3, imp % 13
+                    \item $\neg T \vee U$ \dotfill 13,12, mp % 14
+                    \item $T \rightarrow U$ \dotfill 14, imp % 15
+                    \item $U$ {\scriptsize$ _{\qedsymbol}$} \dotfill 15,5, mp % 16
+                \end{enumerate} % Provas Q. 3
+            \end{multicols}
+    \end{enumerate} % Perguntas Lista 2 Métodos Log. Propo...
+\end{document}
