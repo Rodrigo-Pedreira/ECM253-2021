@@ -99,37 +99,34 @@ Métodos de prova em lógica proposicional}
                             \end{flushleft}
                         \end{multicols}
                     \end{minipage} % Escrita b
-                    \pagebreak[4]
-%TODO RESPONDER                \item $(A \vee B) \wedge \neg A \rightarrow B$ % c
+                \item $(A \vee B) \wedge \neg A \rightarrow B$ % c
             
                     \begin{minipage}{0.16\textwidth} % Tabela c
                         \begin{tabular}[t]{@{}cccc@{}}\\
-                            \multicolumn{1}{c|}{i} & $A$ & \multicolumn{2}{|c}{$B$} \\ \midrule % 1
-                            \multicolumn{1}{c|}{0} & \ff & \multicolumn{2}{|c}{$X$} \\ \midrule % 2
-                            \multicolumn{1}{c|}{1} & \ff & \multicolumn{2}{|c}{$X$} \\ \midrule % 3
-                            \multicolumn{1}{c|}{2} & \vv & \multicolumn{1}{|c}{\ff} & \multicolumn{1}{c}{\vv} \\ % 4
+                            \multicolumn{1}{c|}{i} & \multicolumn{2}{|c}{$A$} & \multicolumn{1}{|c}{$B$} \\ \midrule % 1
+                            \multicolumn{1}{c|}{0} & \multicolumn{2}{|c}{$X$} & \multicolumn{1}{|c}{\ff} \\ \midrule % 2
+                            \multicolumn{1}{c|}{1} & \multicolumn{2}{c}{\vv} & \multicolumn{1}{|c}{\ff} \\ \midrule % 3
+                            \multicolumn{1}{c|}{2} & \multicolumn{1}{c}{\vv}  & \multicolumn{1}{c}{\ff} & \multicolumn{1}{|c}{\vv} \\ % 4
                         \end{tabular}
                     \end{minipage} % Tabela c
                     \begin{minipage}{0.57\textwidth} % Escrita c
                         \begin{multicols}{3}
                             \begin{flushleft}
                                 {\small \textbf{Assumindo:}\\
-                                $(A \wedge B) \wedge \neg B = \vv$\\
-                                $A = \ff$\\
+                                $(A \vee B) \wedge \neg A = \vv$\\
+                                $B = \ff$\\
                                 \columnbreak
                                 \textbf{Então:}
                                 \begin{enumerate}[label=\arabic*.] % Iterações c
-                                    \item $(A \wedge B) = \vv$\\
-                                        $(\neg B) = \vv$ \columnbreak
-                                    \item $B = \ff$\\
+                                    \item $(A \vee B) = \vv$\\
+                                        $(\neg A) = \vv$ \columnbreak
+                                    \item $A = \ff$\\
                                         $A = \vv$\\
-                                        $B = \vv$
                                 \end{enumerate}} % Iterações c
                             \end{flushleft}
                         \end{multicols}
                         \begin{flushright} É tautologia!\end{flushright}
                     \end{minipage} % Escrita c
-                    \medskip
                 \item $(A \wedge B) \wedge \neg B \rightarrow A$ % d
             
                     \begin{minipage}{0.16\textwidth} % Tabela d
@@ -203,7 +200,7 @@ Métodos de prova em lógica proposicional}
                             \item $E \wedge R$ {\scriptsize$ _{\qedsymbol}$} \dotfill 8,1, con % 9
                         \end{enumerate} % Provas b
                     \end{multicols}
-                    \medskip
+                    \pagebreak[4]
                 \item Não é verdade que se as taxas de eletricidade subirem, o consumo diminuirá, nem é verdade que novas usinas de energia serão construídas ou as contas não serão atrasadas. Portanto o consumo não diminuirá e as contas serão atrasadas. (T, C, U, Co) % c
                 
                     \smallskip
@@ -242,7 +239,6 @@ Métodos de prova em lógica proposicional}
                     \end{multicols}
                     \medskip
             \end{enumerate} % Itens P. 2.2
-            \bigskip
             \pagebreak[4]
         \item Estabelecer a validade (válido ou inválido) do argumento por dedução (sequência de prova):%P.2.3
         
