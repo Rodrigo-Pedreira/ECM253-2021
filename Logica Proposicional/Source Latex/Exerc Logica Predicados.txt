@@ -1,0 +1,87 @@
+\documentclass{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{fullpage,enumitem,amssymb,amsmath,xcolor}
+\usepackage{parskip}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\setlength{\parskip}{1em}
+
+\title{ECM253 – Linguagens Formais, Autômatos e Compiladores
+
+Lista de Exercícios
+
+Lógica de Predicados}
+\author{Marco Furlan}
+\date{Março,2021}
+
+\begin{document}
+
+    \maketitle
+    {\large \textbf{Alunos:}}
+
+    \begingroup % tabular
+        \setlength{\tabcolsep}{20pt}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{lc} % Alunos
+            Rodrigo Machado Pedreira & 18.01569-7\\
+            Douglas Giacomelli Amaro Filho & 19.01091-5\\
+            Lucas Pedreira Barreto & 17.01106-0\\
+        \end{tabular} % Alunos
+    \endgroup % tabular
+    \bigskip
+    \begin{enumerate} % Perguntas Lista 3
+        \item Considerar os predicados a seguir: % P.1
+            \begin{itemize} % Condições do enunciado
+                \setlength\itemsep{-.8ex}
+                \item B(x) for “x é bonito.”
+                \item E(x) for “x é elegante.”
+                \item G(x, y) for “x gosta de y.”
+                \item H(x) for “x é um homem.”
+                \item M(x) for “x é uma mulher.”
+                \item j for “John.”
+                \item k for “Kathy.”
+            \end{itemize} % Condições do enunciado
+            Pede-se: traduzir em português as fbfs a seguir:
+            \begin{enumerate} % Itens da P.1
+                \item $E(j) \wedge G(k,j)$ %
+
+                    John é elegante e Kathy gosta de Jonh.
+                \item $(\forall x)[H(x) \rightarrow E(x)]$ % b
+
+                    Todos os homens são elegantes.
+                \item $(\forall x) (M(x) \rightarrow (\forall y)[G(x,y) \rightarrow E(y) \wedge H(y)]$ % c
+
+                    Mulheres gostam somente de homens elegantes.
+                \item $(\exists x)[H(x) \wedge E(x) \wedge G(x,k)]$ % d
+
+                    Pelo menos um homem elegante gosta de Kathy.
+                \item $(\exists x) M(x) \wedge B(x) \wedge (\forall y)[G(x,y)\rightarrow E(y) \wedge H(y)]$ % e
+
+                    Há no mínimo uma mulher bonita que gosta somente de homens elegantes.
+                \item $(\forall x) [M(x) \wedge B(x) \rightarrow G(j,x)]$ % f
+
+                    John gosta de mulheres bonitas.
+            \end{enumerate} % Itens da P.1
+            \bigskip
+        \item Traduzir os argumentos a seguir em lógica de predicados, utilizando os predicados apresentados. % P.2
+            \begin{enumerate} % Itens P.2
+                \item Há um astrônomo que não é míope. Qualquer um que usa óculos então é míope. Além disso, todos usam óculos ou usam lentes de contato. Portanto, algum astrônomo usa lentes de contato $(A(x), M(x), O(x), L(x))$. % a
+                    \begin{center}
+                        $(\exists x)[A(x) \wedge \neg M(x)] \wedge (\forall x)[O(x) \rightarrow M(x)] \wedge (\forall x)[O(x) \vee L(x)] \rightarrow (\exists x)[A(x) \wedge L(x)]$
+                    \end{center}
+                \medskip
+                \item  Há uma estrela de cinema que é mais rica que as outras. Todo mundo que é mais rico que os outros também paga mais impostos que os outros. Portanto, existe uma estrela de cinema que paga mais impostos que os outros $(E(x), R(x,y), I(x,y))$. % b
+                    \begin{center}
+                        $(\exists x)[E(x) \wedge R(x,y)] \wedge (\forall x)[R(x,y) \rightarrow I(x,y)] \rightarrow (\exists x)[E(x) \wedge I(x,y)]$
+                    \end{center}
+            \end{enumerate} % Itens P.2
+    \end{enumerate} % Perguntas Lista 3
+\end{document}
