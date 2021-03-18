@@ -26,23 +26,30 @@ Métodos de prova em lógica proposicional}
 \date{Fevereiro,2021}
 
 \begin{document}
-    
     \maketitle
-    {\large Aluno:}\\
-    {\large Rodrigo Machado Pedreira \hspace{1cm} 18.01569-7}
-    
+    {\large \textbf{Alunos:}}
+
+    \begingroup % tabular
+        \setlength{\tabcolsep}{20pt}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{lc} % Alunos
+            Rodrigo Machado Pedreira & 18.01569-7\\
+            Douglas Giacomelli Amaro Filho & 19.01091-5\\
+            Lucas Pedreira Barreto & 17.01106-0\\
+        \end{tabular} % Alunos
+    \endgroup % tabular
     \bigskip
         \begin{enumerate} % Perguntas Lista 2 Métodos Log. Propo...
         \item Utilizar o \textbf{algoritmo} TestarTautologia para provar que as expressões a         seguir são tautologias: % P. 2.1
-            
+
             \medskip Obs. do aluno: Considerar para todos os itens abaixo que quando um elemento apresentar dois valores verdade diferentes as expressões são tautologias. Já que estamos tentando prova las falsas esse acontecimento é uma inconsistência, não é possível algo ser verdadeiro e falso ao mesmo tempo em lógica proposicional, portanto é falso que não são tautologias, consequentemente é verdadeiro que elas são tautologias.\medskip\\
             X = Desconhecido
-            
+
             \medskip
             \begin{enumerate} % Itens P. 2.1
                 \setlength{\columnsep}{.5cm}
                 \item $[\neg B \wedge (A \rightarrow B)] \rightarrow \neg A$ % a
-                
+
                     \begin{minipage}{0.15\textwidth} % Tabela a
                         \begin{tabular}[t]{@{}ccc@{}}\\
                             \multicolumn{1}{c|}{i} & $A$ & \multicolumn{1}{|c}{$B$} \\ \midrule % 1
@@ -72,7 +79,7 @@ Métodos de prova em lógica proposicional}
                     \end{minipage} % Escrita a
                     \medskip
                 \item $[(A \rightarrow B) \wedge A] \rightarrow B$ % b
-            
+
                     \begin{minipage}{0.15\textwidth} % Tabela b
                         \begin{tabular}[t]{@{}ccc@{}}\\
                             \multicolumn{1}{c|}{i} & $A$ & \multicolumn{1}{|c}{$B$} \\ \midrule % 1
@@ -99,8 +106,9 @@ Métodos de prova em lógica proposicional}
                             \end{flushleft}
                         \end{multicols}
                     \end{minipage} % Escrita b
+                    \pagebreak
                 \item $(A \vee B) \wedge \neg A \rightarrow B$ % c
-            
+
                     \begin{minipage}{0.16\textwidth} % Tabela c
                         \begin{tabular}[t]{@{}cccc@{}}\\
                             \multicolumn{1}{c|}{i} & \multicolumn{2}{|c}{$A$} & \multicolumn{1}{|c}{$B$} \\ \midrule % 1
@@ -128,7 +136,7 @@ Métodos de prova em lógica proposicional}
                         \begin{flushright} É tautologia!\end{flushright}
                     \end{minipage} % Escrita c
                 \item $(A \wedge B) \wedge \neg B \rightarrow A$ % d
-            
+
                     \begin{minipage}{0.16\textwidth} % Tabela d
                         \begin{tabular}[t]{@{}cccc@{}}\\
                             \multicolumn{1}{c|}{i} & $A$ & \multicolumn{2}{|c}{$B$} \\ \midrule % 1
@@ -159,11 +167,12 @@ Métodos de prova em lógica proposicional}
             \end{enumerate} % Itens P. 2.1
             \bigskip
         \item \textbf{Traduzir} em \textbf{Lógica Proposicional} os \textbf{argumentos} apresentados a \textbf{seguir} e, \textbf{depois}, \textbf{provar} que são \textbf{argumentos válidos} utilizando \textbf{sequências de prova} com \textbf{regras de equivalência} e \textbf{regras de inferência} a partir de \textbf{hipóteses} (como apresentado em aula). Empregar os símbolos proposicionais indicados. %P. 2.2
-        
+
+            \smallskip
             \begin{enumerate} % Itens P. 2.2
                 \setlength{\columnsep}{1cm}
                 \item A colheita é boa, mas não há água suficiente. Se tivesse bastante chuva ou não tivesse bastante sol, então haveria água suficiente. Portanto, a colheita é boa e há bastante sol. (C, A, H, S) % a
-                
+
                     \smallskip
                     \textbf{Resposta:} \begin{center}$[(C \wedge \neg A) \wedge [(H \vee \neg S) \rightarrow A]] \rightarrow (C \wedge S)$\end{center}
                     \textbf{Prova:}
@@ -180,9 +189,9 @@ Métodos de prova em lógica proposicional}
                             \item $(C \wedge S)$ {\scriptsize$ _{\qedsymbol}$} \dotfill3,7, con % 8
                         \end{enumerate} % Provas a
                     \end{multicols}
-                    \medskip
+                    \pagebreak
                 \item Rússia tinha um poder superior, e ou a França não era forte ou Napoleão cometeu um erro. Napoleão não cometeu um erro, mas se o exército não tivesse falhado, a França seria forte. Portanto, o exército falhou e a Rússia tinha um poder superior. (R, F, N, E) % b
-                
+
                     \smallskip
                     \textbf{Resposta:} \begin{center}$R\wedge(\neg F \vee N) \wedge [\neg N \wedge    (\neg E \rightarrow F)] \rightarrow (E \wedge R)$\end{center}
                     \textbf{Prova:}
@@ -200,9 +209,8 @@ Métodos de prova em lógica proposicional}
                             \item $E \wedge R$ {\scriptsize$ _{\qedsymbol}$} \dotfill 8,1, con % 9
                         \end{enumerate} % Provas b
                     \end{multicols}
-                    \pagebreak[4]
                 \item Não é verdade que se as taxas de eletricidade subirem, o consumo diminuirá, nem é verdade que novas usinas de energia serão construídas ou as contas não serão atrasadas. Portanto o consumo não diminuirá e as contas serão atrasadas. (T, C, U, Co) % c
-                
+
                     \smallskip
                     \textbf{Resposta:} \begin{center}$\neg(T \rightarrow C) \wedge \neg(U \vee \neg Co) \rightarrow (\neg C \wedge Co)$\end{center}
                     \textbf{Prova:} $(\neg C \wedge Co)$
@@ -221,7 +229,7 @@ Métodos de prova em lógica proposicional}
                     \end{multicols}
                     \medskip
                 \item Se José pegou as joias ou a Sra. Krasov mentiu, então ocorreu um crime. O sr. Krasov não estava na cidade. Se ocorreu um crime, então o sr. Krasov estava na cidade. Portanto José não pegou as joias. (J, M, C, E). % d
-                
+
                     \smallskip
                     \textbf{Resposta:} \begin{center}$[[(J \vee M) \rightarrow C] \wedge \neg E \wedge (C \rightarrow E)] \rightarrow \neg J $\end{center}
                     \textbf{Prova:}
@@ -239,9 +247,8 @@ Métodos de prova em lógica proposicional}
                     \end{multicols}
                     \medskip
             \end{enumerate} % Itens P. 2.2
-            \pagebreak[4]
         \item Estabelecer a validade (válido ou inválido) do argumento por dedução (sequência de prova):%P.2.3
-        
+
             \setlength{\columnsep}{1cm}
             \smallskip
             \begin{align*}

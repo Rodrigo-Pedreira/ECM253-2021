@@ -20,55 +20,63 @@ Lógica Proposicional}
 
 \begin{document}
     \maketitle
-    {\large \textbf{Aluno:}} \hspace{0pt} Rodrigo Machado Pedreira \hspace{1cm} 18.01569-7
-    
+    {\large \textbf{Alunos:}}
+
+    \begingroup % tabular
+        \setlength{\tabcolsep}{20pt}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{lc} % Alunos
+            Rodrigo Machado Pedreira & 18.01569-7\\
+            Douglas Giacomelli Amaro Filho & 19.01091-5\\
+            Lucas Pedreira Barreto & 17.01106-0\\
+        \end{tabular} % Alunos
+    \endgroup % tabular
+
     \bigskip
     Responder as questões a seguir. Para cada tipo de questão existe um exemplo
     de como resolvê-la.
-    
-    %\smallskip
     \begin{enumerate} % Perguntas Lista 1
         \item Responder quais das frases a seguir são sentenças, justificando. % P.1
-        
+
             \begin{enumerate} % Itens P.1.1
                 \item A lua é feita de queijo verde. % a
-                
+
                     \smallskip
                     \textbf{Resposta:}
                         É sentença. Possui um termo definido e existe um significado verdadeiro ou falso.
                     \medskip
                 \item Dois é um número primo. % b
-                
+
                     \smallskip
                     \textbf{Resposta:}
                         É uma sentença, já que ``Dois" e ``Número primo" são termos definidos e existe apenas um significado: verdadeiro ou falso.
                     \medskip
                 \item As taxas do ano que vem serão maiores. % c
-                
+
                     \smallskip
                     \textbf{Resposta:}
                         É uma sentença, já que ``taxas do ano que vem" e ``maiores" são termos definidos e existe apenas um significado: verdadeiro ou falso. (Assumindo que ``as taxas" é algo sabido, único e conhecido neste contexto e ``maiores" se refere às ditas taxas)
                     \medskip
                 \item  $x - 4 = 0$ % d
-                
+
                     \smallskip
                     \textbf{Resposta:}
                         Não é uma sentença, pois ``x" é uma variável numérica e o significado(resultado) dessa frase(equação matemática) não é: verdadeiro ou falso. Caso fosse afirmado que $x = 4$, neste contexto, aí sim seria uma sentença.
                     \medskip
                 \item Ele é um homem alto. % e
-                
+
                     \smallskip
                     \textbf{Resposta:}
                         Não é uma sentença, já que ``Ele" e ``alto" não são termos definidos (afinal alto é algo relativo), isso impede analisar a veracidade da frase.
                     \medskip
                 \item O jogo terminará logo? % f
-                
+
                     \smallskip
                     \textbf{Resposta:}
                         Não é uma sentença, já que ``logo" não é um termo definido (é algo relativo), isso impede analisar a veracidade da frase.
                     \medskip
                 \item As taxas do ano que vem serão menores. % g
-                
+
                     \smallskip
                     \textbf{Resposta:}
                         É uma sentença, já que ``taxas do ano que vem" e ``menores" são termos definidos e existe apenas um significado: verdadeiro ou falso. (Assumindo que ``as taxas" é algo sabido, único e conhecido neste contexto e menores se refere às ditas taxas)
@@ -77,39 +85,39 @@ Lógica Proposicional}
         \item Indique o antecedente (\textbf{A}) e o consequente (\textbf{C}) de cada uma das seguintes sentenças: % P.2
             \begin{enumerate} % Itens P.1.2
                 \item O crescimento sadio das plantas é consequência de quantidade suficiente de água. % a
-                
+
                     \smallskip
                     \textbf{Resposta:}
-                        
+
                     \hspace{48pt} \textbf{A:} quantidade suficiente de água
-                        
+
                     \hspace{48pt} \textbf{C:} crescimento sadio das plantas
                     \medskip
                 \item O crescimento da oferta de computadores é uma condição necessária para o desenvolvimento científico. % b
-                
+
                     \smallskip
                     \textbf{Resposta:}
-                        
+
                     \hspace{48pt} \textbf{A:} desenvolvimento científico
-                        
+
                     \hspace{48pt} \textbf{C:} crescimento da oferta de computadores
                     \medskip
                 \item Haverá novos erros apenas se o programa for alterado. % c
-                
+
                     \smallskip
                     \textbf{Resposta:}
-                        
+
                     \hspace{48pt} \textbf{A:} novos erros
-                        
+
                     \hspace{48pt} \textbf{C:} o programa for alterado
                     \medskip
                 \item A economia de combustível implica um bom isolamento, ou todas as janelas são janelas para tempestades. % d
-                
+
                     \smallskip
                     \textbf{Resposta:}
-                        
+
                     \hspace{48pt} \textbf{A:} economia de combustível
-                        
+
                     \hspace{48pt} \textbf{C:} bom isolamento
                     \medskip
             \end{enumerate} % Itens P.1.2
@@ -123,37 +131,37 @@ Lógica Proposicional}
             Traduzir as seguintes fbfs para o português:
             \begin{enumerate} % Itens P.3
                 \item $B \vee \neg C$ % a
-                
+
                     \smallskip
                     \textbf{Resposta:} Violetas são azuis ou açúcar é azedo.
                     \medskip
                 \item $(C \wedge \neg A) \leftrightarrow B$ % b
-                
+
                     \smallskip
                     \textbf{Resposta:} Açúcar é doce e rosas não são vermelhas se e somente se violetas forem azuis
                     \medskip
                 \item $\neg (B \wedge \neg C) \rightarrow A$ % c
-                
+
                 \smallskip
                 \textbf{Resposta:} Se Violetas não são azuis e açúcar é doce então rosas são vermelhas
                 \medskip
                 \item $(A \vee B) \wedge \neg C$ % d
-                
+
                     \smallskip
                     \textbf{Resposta:} Rosas são vermelhas ou violetas são azuis. E açúcar não é doce
                     \medskip
                 \item $\neg B \vee (A \rightarrow C)$ % e
-                
+
                     \smallskip
-                        \textbf{Resposta:} Violetas não são azuis. Ou se rosas são vermelhas então açúcar é doce 
+                        \textbf{Resposta:} Violetas não são azuis. Ou se rosas são vermelhas então açúcar é doce
                     \medskip
                 \item $C \wedge (\neg A \leftrightarrow B)$ % f
-                
+
                     \smallskip
                     \textbf{Resposta:} Açúcar é doce. E rosas não são vermelhas se e somente se violetas forem azuis
                     \medskip
                 \item $A \vee (B \wedge \neg C)$ % g
-                
+
                     \smallskip
                     \textbf{Resposta:} Rosas são vermelhas. Ou violetas são azuis e açúcar não é doce
                     \medskip

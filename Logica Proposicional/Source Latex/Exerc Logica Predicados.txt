@@ -23,7 +23,6 @@ Lógica de Predicados}
 \date{Março,2021}
 
 \begin{document}
-
     \maketitle
     {\large \textbf{Alunos:}}
 
@@ -39,6 +38,7 @@ Lógica de Predicados}
     \bigskip
     \begin{enumerate} % Perguntas Lista 3
         \item Considerar os predicados a seguir: % P.1
+        \begin{multicols}{2}
             \begin{itemize} % Condições do enunciado
                 \setlength\itemsep{-.8ex}
                 \item B(x) for “x é bonito.”
@@ -46,29 +46,31 @@ Lógica de Predicados}
                 \item G(x, y) for “x gosta de y.”
                 \item H(x) for “x é um homem.”
                 \item M(x) for “x é uma mulher.”
-                \item j for “John.”
-                \item k for “Kathy.”
+                \item \textit{j} for “John.”
+                \item \textit{k} for “Kathy.”
             \end{itemize} % Condições do enunciado
+            \end{multicols}
+
             Pede-se: traduzir em português as fbfs a seguir:
             \begin{enumerate} % Itens da P.1
-                \item $E(j) \wedge G(k,j)$ %
+                \item $E(j) \wedge G(k,j)$ % a
 
-                    John é elegante e Kathy gosta de Jonh.
+                    \textbf{Resposta:} John é elegante e Kathy gosta de Jonh.
                 \item $(\forall x)[H(x) \rightarrow E(x)]$ % b
 
-                    Todos os homens são elegantes.
+                    \textbf{Resposta:} Todos os homens são elegantes.
                 \item $(\forall x) (M(x) \rightarrow (\forall y)[G(x,y) \rightarrow E(y) \wedge H(y)]$ % c
 
-                    Mulheres gostam somente de homens elegantes.
+                    \textbf{Resposta:} Mulheres gostam somente de homens elegantes.
                 \item $(\exists x)[H(x) \wedge E(x) \wedge G(x,k)]$ % d
 
-                    Pelo menos um homem elegante gosta de Kathy.
+                    \textbf{Resposta:} Pelo menos um homem elegante gosta de Kathy.
                 \item $(\exists x) M(x) \wedge B(x) \wedge (\forall y)[G(x,y)\rightarrow E(y) \wedge H(y)]$ % e
 
-                    Há no mínimo uma mulher bonita que gosta somente de homens elegantes.
+                    \textbf{Resposta:} Há no mínimo uma mulher bonita que gosta somente de homens elegantes.
                 \item $(\forall x) [M(x) \wedge B(x) \rightarrow G(j,x)]$ % f
 
-                    John gosta de mulheres bonitas.
+                    \textbf{Resposta:} John gosta de mulheres bonitas.
             \end{enumerate} % Itens da P.1
             \bigskip
         \item Traduzir os argumentos a seguir em lógica de predicados, utilizando os predicados apresentados. % P.2
