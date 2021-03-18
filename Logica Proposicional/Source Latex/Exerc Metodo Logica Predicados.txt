@@ -1,0 +1,192 @@
+\documentclass{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{fullpage,enumitem,amssymb,amsmath,xcolor}
+\usepackage{parskip}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\setlength{\parskip}{1em}
+
+\title{ECM253 – Linguagens Formais, Autômatos e Compiladores
+
+Lista de Exercícios
+
+Métodos de prova em lógica de predicados}
+\author{Marco Furlan}
+\date{Março,2021}
+
+\begin{document}
+    \maketitle
+    {\large \textbf{Alunos:}}
+
+    \begingroup % tabular
+        \setlength{\tabcolsep}{20pt}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{lc} % Alunos
+            Rodrigo Machado Pedreira & 18.01569-7\\
+            Douglas Giacomelli Amaro Filho & 19.01091-5\\
+            Lucas Pedreira Barreto & 17.01106-0\\
+        \end{tabular} % Alunos
+    \endgroup % tabular
+    \bigskip
+    \begin{enumerate} % Perguntas Lista 4
+        \item Provar se as fbfs a seguir são válidas ou inválidas. % P.1
+            \begin{enumerate} % Itens P.1
+                \item $(\exists x) A(x) \leftrightarrow \neg[(\forall x) \neg A(x)]$ % a
+
+                        \textbf{Rescrevendo e provando validade:}
+                        \begin{enumerate}[label=\arabic*. , rightmargin=9.5cm ,itemsep=-1.0ex] % Resp a
+                            \item $A(a) \leftrightarrow \neg[\neg A(a)]$ \dotfill ei,ui% 1
+                            \item $A(a) \leftrightarrow A(a)$ \dotfill dn % 2
+                        \end{enumerate} % Resp a
+                        \medskip
+                \item $(\forall x)P(x)\vee (\exists x)Q(x) \rightarrow (\forall x)[(P(x) \vee Q(x)]$ % b
+
+                    \textbf{Rescrevendo e provando validade:}
+
+                    \begin{minipage}{0.30\textwidth}
+                        \begin{enumerate}[label=\arabic*. , itemsep=0.7ex , rightmargin=\dimexpr\linewidth-5.7cm-\leftmargin\relax] % Resp b
+                            \item $P(x)\vee Q(a) \rightarrow [P(x) \vee Q(a)]$ \hfill (ui,ei) % 1
+                            \item $P(x)\vee Q(a) = \texttt{V}$ % 2
+                            \item $P(x) \vee Q(a) = \texttt{F}$ % 3
+                        \end{enumerate} % Resp b
+                    \end{minipage}
+                    \hspace{.6cm}
+                    \begin{minipage}{0.45\textwidth} % Resp b
+                        \vspace{0ex}
+                        Não é possível provar a afirmação falsa, já que para isso teríamos as condições 2,3 como validas, porém elas são iguais, portanto não podem ter valores verdade diferentes.
+                    \end{minipage} % Resp b
+                    \vspace{4pt}
+                \item $(\forall x)A(x) \leftrightarrow \neg[(\exists x) \neg A(x)]$ % c
+
+                    \textbf{Rescrevendo e provando validade:}
+                        \begin{enumerate}[label=\arabic*. , rightmargin=9.5cm ,itemsep=-1.0ex] % Resp c
+                            \item $A(b) \leftrightarrow \neg[\neg A(b)]$ \dotfill ei,ui% 1
+                            \item $A(b) \leftrightarrow A(b)$ \dotfill dn % 2
+                        \end{enumerate} % Resp c
+                        \pagebreak
+                \item $(\forall x) [P(x) \vee Q(x)] \rightarrow (\forall x)P(x) \vee (\exists y)Q(y)$ % d
+
+                    \textbf{Rescrevendo e provando validade:}
+
+                    \begin{minipage}{0.30\textwidth}
+                        \begin{enumerate}[label=\arabic*. , itemsep=0.7ex , rightmargin=\dimexpr\linewidth-5.7cm-\leftmargin\relax] % Resp d
+                            \item $[P(x) \vee Q(a)] \rightarrow P(x) \vee Q(a)$ \hfill (ei,ui) % 1
+                            \item $P(x) \vee Q(a) = \texttt{V}$ % 2
+                            \item $P(x) \vee Q(a) = \texttt{F}$ % 3
+                        \end{enumerate} % Resp d
+                    \end{minipage}
+                    \hspace{.6cm}
+                    \begin{minipage}{0.45\textwidth} % Resp d
+                        \vspace{0ex}
+                        Não é possível provar a afirmação falsa, já que para isso teríamos as condições 2,3 como validas, porém elas são iguais, portanto não podem ter valores verdade diferentes.
+                    \end{minipage} % Resp d
+            \end{enumerate} % Itens P.1
+            \bigskip
+        \item Considere a fbf a seguir: % P.2
+            \begin{center}
+                $(\exists x)P(x) \wedge (\exists x)Q(x) \rightarrow (\exists x)[P(x) \wedge Q(x)]$
+            \end{center}
+            \medskip
+            \begin{enumerate} % Itens P.2
+                \item Encontrar uma interpretação em que esta fbf não é válida. % a
+
+                    \textbf{Resposta:} Existe no mínimo uma flor com pétalas no jardim e existe no mínimo uma flor queimada no jardim então existe uma flor com pétalas e queimada no jardim.
+                \item Encontrar a falha na seguinte “demonstração” desta fbf: % b
+
+                    \begin{minipage}{0.30\textwidth}
+                        \begin{enumerate}[label=\arabic*. , itemsep=.3ex , leftmargin=0cm , rightmargin=\dimexpr\linewidth-5cm-\leftmargin\relax] % Prova enunciado b
+                            \item $(\exists x)P(x)$ \dotfill (hip.) % 1
+                            \item $P(a)$ \dotfill 1, ei % 2
+                            \item $(\exists x)Q(x)$ \dotfill (hip.) % 3
+                            \item $Q(a)$ \dotfill 3, ei % 4
+                            \item $P(a) \wedge Q(a)$ \dotfill 2,4, con % 5
+                            \item $(\exists x)[P(x) \wedge Q(x)]$ \dotfill 5, eg % 6
+                        \end{enumerate} % Prova enunciado b
+                    \end{minipage}
+                    \hspace{.4cm}
+                    \begin{minipage}{0.45\textwidth}
+                        \vspace{-3ex}
+                        \textbf{Correção:} O erro foi usar `a' como constante em 2 e 4 ao mesmo tempo, pois não pode-se assumir que eles são iguais. `a' já havia sido utilizado em 2 e não poderia ser utilizado novamente em 4, isso é uma condição para utilização de ``ei".
+                    \end{minipage}
+            \end{enumerate} % Itens P.2
+            \medskip
+        \item Demonstrar, por sequência de prova, que as fbfs a seguir são teoremas (válidas): % P.3
+            \smallskip
+            \begin{enumerate} % Itens P.3
+                \item $(\forall x) P(x) \rightarrow (\forall x) [P(x) \vee Q(x)]$ % a
+                    \vspace{-2pt}
+                    \begin{enumerate}[label=\arabic*. , rightmargin=8cm , itemsep=-1.2ex] % Resp a
+                        \item $(\forall x) P(x)$ \dotfill (hip.)% 1
+                        \vspace{1pt}
+                        \item $P(x)$ \dotfill 1, ui % 2
+                        \item $P(x) \vee Q(x)$ \dotfill 2, add % 3
+                        \item $(\forall x)[P(x) \vee Q(x)]$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill 3, ug % 4
+                    \end{enumerate} % Resp a
+                    \smallskip
+                \item $(\forall x)P(x) \wedge (\exists x)Q(x) \rightarrow (\exists x)[P(x) \wedge Q(x)]$ % b
+                    \vspace{-2pt}
+                    \begin{multicols}{2}
+                        \begin{enumerate}[label=\arabic*. , rightmargin=0cm , itemsep=-1.2ex] % Resp b
+                            \item $(\forall x)P(x)$ \dotfill (hip.) % 1
+                            \item $(\exists x)Q(x)$ \dotfill (hip.)% 2
+                            \vspace{1pt}
+                            \item $P(a)$ \dotfill 1, ui % 3
+                            \item $Q(a)$ \dotfill 2, ei % 4
+                            \item $P(a) \wedge Q(a)$ \dotfill 3,4, add % 5
+                            \item $(\exists x)[P(x) \wedge Q(x)]$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill 5, eg % 6
+                        \end{enumerate} % Resp b
+                    \end{multicols}
+                    \vspace{-8pt}
+                \item $(\exists x)(\exists y)P(x,y)\rightarrow(\exists y)(\exists x)P(x,y)$ % c
+                    \vspace{-2pt}
+                    \begin{enumerate}[label=\arabic*. , rightmargin=8cm , itemsep=-1.4ex] % Resp c
+                        \item $(\exists x)(\exists y)P(x,y)$ \dotfill (hip.)% 1
+                        \vspace{1pt}
+                        \item $(\exists y)P(a,y)$ \dotfill 1, ei % 2
+                        \item $P(a,b)$ \dotfill 2, ei % 3
+                        \item $(\exists x)P(x,b)$ \dotfill 3, eg % 4
+                        \item $(\exists y)(\exists x)P(x,y)$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill 4, eg % 5
+                    \end{enumerate} % Resp c
+                \medskip
+                \item $(\forall x)(\forall y)Q(x,y) \rightarrow (\forall y)(\forall x)Q(x,y)$ % d
+                    \smallskip
+                    \begin{enumerate}[label=\arabic*. , rightmargin=8cm , itemsep=-1.2ex] % Resp d
+                        \item $(\forall x)(\forall y)Q(x,y)$ \dotfill (hip.)% 1
+                        \vspace{1pt}
+                        \item $(\forall y)Q(a,y)$ \dotfill 1, ui % 2
+                        \item $Q(a,b)$ \dotfill 2, ui % 3
+                        \item $(\forall x)Q(x,b)$ \dotfill 3, ug % 4
+                        \item $(\forall y)(\forall x)Q(x,y)$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill 4, ug % 5
+                    \end{enumerate} % Resp d
+            \end{enumerate} % Itens P.3
+            \medskip
+        \item Usando a lógica de predicados, provar, por sequência de prova, que os argumentos a seguir são válidos. Utilizar os predicados apresentados % P.4
+            \begin{enumerate} % Itens P.4
+                \item Há um astrônomo que não é míope. Qualquer um que usa óculos então é míope. Além disso, todos usam óculos ou usam lentes de contato. Portanto, algum astrônomo usa lentes de contato $(A(x), M(x), O(x), L(x))$. % a
+                    \begin{center}
+                        $(\exists x)[A(x) \wedge \neg M(x)] \wedge (\forall x)[O(x) \rightarrow M(x)] \wedge (\forall x)[O(x) \vee L(x)] \rightarrow (\exists x)[A(x) \wedge L(x)]$
+                    \end{center}
+
+                \item Todo membro do conselho vem da indústria ou do governo. Todos do governo que são advogados são a favor da moção. John não é da indústria, mas é advogado. Portanto, se John for um membro do conselho, ele será a favor da moção $(M(x), I(x), G(x), A(x), F(x),j)$.\smallskip \\
+                Dica: Para resolver problemas do tipo (lógica proposicional ou de predicados) como $A \wedge B \wedge C \rightarrow D \rightarrow E$, notar que a expressão pode ser reescrita como $\neg(A \wedge B \wedge C) \vee (\neg D \vee E)$ que, por sua vez, pode ser escrita como $(\neg A \vee \neg B \vee \neg C)\vee(\neg D \vee E)$ e também como $(\neg A \vee \neg B \vee \neg C \vee \neg D) \vee E$ e, finalmente, como $A \wedge B \wedge C \wedge D \rightarrow E$. Em outras palavras, nesse tipo de forma (somente nesse), a fbf $D$ também pode ser admitida como uma hipótese % b
+
+                \item Há uma estrela de cinema que é mais rica que as outras. Todo mundo que é mais rico que os outros também paga mais impostos que os outros. Portanto, existe uma estrela de cinema que paga mais impostos que os outros $(E(x), R(x, y), I(x, y))$. % c
+                    \begin{center}
+                        $(\exists x)[E(x) \wedge R(x,y)] \wedge (\forall x)[R(x,y) \rightarrow I(x,y)] \rightarrow (\exists x)[E(x) \wedge I(x,y)]$
+                    \end{center}
+
+                \item Todo estudante da Ciência da Computação trabalha mais que alguém e todo mundo que trabalha mais que alguém também dorme menos que esta pessoa. Maria é uma estudante da Ciência da Computação. Portanto Maria dorme menos que outra pessoa $(E(x), T(x, y), D(x, y), m)$. % d
+
+                \item Todo embaixador fala apenas com diplomatas e algum embaixador fala com alguém, portanto existe um diplomata $(E(x), F(x, y), D(x))$. % e
+
+            \end{enumerate} % Itens P.4
+    \end{enumerate} % Perguntas Lista 4
+\end{document}
