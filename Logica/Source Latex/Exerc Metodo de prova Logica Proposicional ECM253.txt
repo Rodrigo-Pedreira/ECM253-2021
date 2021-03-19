@@ -261,7 +261,7 @@ Métodos de prova em lógica proposicional}
                     \item $Q \rightarrow (R \wedge S)$ \dotfill(hip.) % 2
                     \item $\neg R \vee (\neg T \vee U)$ \dotfill(hip.) % 3
                     \item $P \wedge T$ \dotfill(hip.)% 4
-                    \smallskip
+                    \vspace{2pt}
                     \item $P$ \dotfill 4, sim % 5
                     \item $Q$ \dotfill 1, 5, mp % 6
                     \item $R \wedge S$ \dotfill 2,6, mp % 7
