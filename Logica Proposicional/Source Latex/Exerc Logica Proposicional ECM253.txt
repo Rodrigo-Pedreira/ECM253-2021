@@ -116,9 +116,9 @@ Lógica Proposicional}
                     \smallskip
                     \textbf{Resposta:}
 
-                    \hspace{48pt} \textbf{A:} economia de combustível
+                    \hspace{48pt} \textbf{A:} bom isolamento
 
-                    \hspace{48pt} \textbf{C:} bom isolamento
+                    \hspace{48pt} \textbf{C:} economia de combustível
                     \medskip
             \end{enumerate} % Itens P.1.2
             \bigskip

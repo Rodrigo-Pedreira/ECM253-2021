@@ -183,7 +183,7 @@ Métodos de prova em lógica proposicional}
                             \smallskip
                             \item $C$ \dotfill 1, sim % 3
                             \item $\neg A$ \dotfill 1, sim % 4
-                            \item $\neg(H \vee \neg S)$ \dotfill 2,4 mp % 5
+                            \item $\neg(H \vee \neg S)$ \dotfill 2,4 mt % 5
                             \item $\neg H \wedge S$ \dotfill5, dm % 6
                             \item $S$ \dotfill6, sim % 7
                             \item $(C \wedge S)$ {\scriptsize$ _{\qedsymbol}$} \dotfill3,7, con % 8
@@ -262,18 +262,15 @@ Métodos de prova em lógica proposicional}
                     \item $\neg R \vee (\neg T \vee U)$ \dotfill(hip.) % 3
                     \item $P \wedge T$ \dotfill(hip.)% 4
                     \smallskip
-                    \item $T$ \dotfill 4, sim % 5
-                    \item $P$ \dotfill 4, sim % 6
-                    \item $Q$ \dotfill 1,6, mp % 7
-                    \item $\neg Q \vee (R \wedge S)$ \dotfill 2, imp % 8
-                    \item $(\neg Q \vee R) \wedge (\neg Q \vee S)$ \dotfill 8, dis % 9
-                    \item $\neg Q \vee R$ \dotfill 9, sim % 10
-                    \item $Q \rightarrow R$ \dotfill 10, imp % 11
-                    \item $R$ \dotfill 11,7, mp % 12
-                    \item $R \rightarrow (\neg T \vee U)$ \dotfill 3, imp % 13
-                    \item $\neg T \vee U$ \dotfill 13,12, mp % 14
-                    \item $T \rightarrow U$ \dotfill 14, imp % 15
-                    \item $U$ {\scriptsize$ _{\qedsymbol}$} \dotfill 15,5, mp % 16
+                    \item $P$ \dotfill 4, sim % 5
+                    \item $Q$ \dotfill 1, 5, mp % 6
+                    \item $R \wedge S$ \dotfill 2,6, mp % 7
+                    \item $R \rightarrow (\neg T \vee U)$ \dotfill 3, imp % 8
+                    \item $R$ \dotfill 7, sim % 9
+                    \item $\neg T \vee U$ \dotfill 8, 9, mp % 10
+                    \item $T \rightarrow U$ \dotfill 10, imp % 11
+                    \item $T$ \dotfill 4, sim % 12
+                    \item $U$ {\scriptsize$ _{\qedsymbol}$} \dotfill 11, 12, mp % 13
                 \end{enumerate} % Provas Q. 3
             \end{multicols}
     \end{enumerate} % Perguntas Lista 2 Métodos Log. Propo...
