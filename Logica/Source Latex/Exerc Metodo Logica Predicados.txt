@@ -28,79 +28,81 @@ Métodos de prova em lógica de predicados}
 
     \begingroup % tabular
         \setlength{\tabcolsep}{20pt}
-        \renewcommand{\arraystretch}{1.5}
+        \renewcommand{\arraystretch}{1.1}
         \begin{tabular}{lc} % Alunos
             Rodrigo Machado Pedreira & 18.01569-7\\
             Douglas Giacomelli Amaro Filho & 19.01091-5\\
             Lucas Pedreira Barreto & 17.01106-0\\
         \end{tabular} % Alunos
     \endgroup % tabular
-    \bigskip
+    \vspace{4pt}
     \begin{enumerate} % Perguntas Lista 4
         \item Provar se as fbfs a seguir são válidas ou inválidas. % P.1
             \begin{enumerate} % Itens P.1
                 \item $(\exists x) A(x) \leftrightarrow \neg[(\forall x) \neg A(x)]$ % a
-
-                        \textbf{Rescrevendo e provando validade:}
+                
+                        \textbf{Rescrevendo e provando validade:} 
                         \begin{enumerate}[label=\arabic*. , rightmargin=9.5cm ,itemsep=-1.0ex] % Resp a
-                            \item $A(a) \leftrightarrow \neg[\neg A(a)]$ \dotfill ei,ui% 1
-                            \item $A(a) \leftrightarrow A(a)$ \dotfill dn % 2
+                            \item $(\exists x) A(x) \leftrightarrow (\exists x)A(x)]$ \dotfill nu % 1
                         \end{enumerate} % Resp a
-                        \medskip
                 \item $(\forall x)P(x)\vee (\exists x)Q(x) \rightarrow (\forall x)[(P(x) \vee Q(x)]$ % b
-
-                    \textbf{Rescrevendo e provando validade:}
-
-                    \begin{minipage}{0.30\textwidth}
-                        \begin{enumerate}[label=\arabic*. , itemsep=0.7ex , rightmargin=\dimexpr\linewidth-5.7cm-\leftmargin\relax] % Resp b
-                            \item $P(x)\vee Q(a) \rightarrow [P(x) \vee Q(a)]$ \hfill (ui,ei) % 1
-                            \item $P(x)\vee Q(a) = \texttt{V}$ % 2
-                            \item $P(x) \vee Q(a) = \texttt{F}$ % 3
-                        \end{enumerate} % Resp b
-                    \end{minipage}
-                    \hspace{.6cm}
-                    \begin{minipage}{0.45\textwidth} % Resp b
-                        \vspace{0ex}
-                        Não é possível provar a afirmação falsa, já que para isso teríamos as condições 2,3 como validas, porém elas são iguais, portanto não podem ter valores verdade diferentes.
-                    \end{minipage} % Resp b
+                
+                    \textbf{Rescrevendo e testando a validade:}
+                    \begin{enumerate}[label=\arabic*. , itemsep=-0.3ex] % Resp b
+                        \item $\neg(\forall x)P(x)\vee (\exists x)Q(x) \vee (\forall x)[(P(x) \vee Q(x)]$ % 1
+                        \item $\neg(\forall x)P(x) \wedge \neg(\exists x)Q(x) \vee (\forall x)[(P(x) \vee Q(x)]$ % 2
+                        \item $(\exists x)\neg P(x) \wedge (\forall x)\neg Q(x) \vee (\forall x)P(x) \vee \foralk Q(x)$ % 3
+                        \item $[\neg(\forall x)P(x) \vee (\forall x)P(x) \vee (\forall x)Q(x)]  \wedge [(\forall x)\neg Q(x) \vee (\forall x)P(x) \vee (\forall x)Q(x)]$ % 4
+                        \item $\neg(\forall x)P(x) \vee (\forall x)P(x) = \texttt{V}$ % 5
+                        \item $\neg[\neg(\forall x)\neg Q(x) \wedge \neg(\forall x)P(x) \wedge \neg(\forall x)Q(x)]$% 6
+                        \item $(\exists x)\neg P(x)$% 7
+                        \vspace{-1.4ex}
+                        \item $(\exists x)Q(x)$% 8
+                        \vspace{-1.4ex}
+                        \item $(\exists x)\neg Q(x)$ % 9
+                    \end{enumerate} % Resp b
+                    Não é possível provar a afirmação verdadeira, pois nos casos em que 7,8,9 forem simultaneamente verdadeiros a afirmação não será valida.
                     \vspace{4pt}
                 \item $(\forall x)A(x) \leftrightarrow \neg[(\exists x) \neg A(x)]$ % c
-
-                    \textbf{Rescrevendo e provando validade:}
+                    
+                    \textbf{Rescrevendo e testando validade:}
                         \begin{enumerate}[label=\arabic*. , rightmargin=9.5cm ,itemsep=-1.0ex] % Resp c
-                            \item $A(b) \leftrightarrow \neg[\neg A(b)]$ \dotfill ei,ui% 1
-                            \item $A(b) \leftrightarrow A(b)$ \dotfill dn % 2
+                            \item $(\forall x)A(x) \leftrightarrow (\forall x)A(x)$ \dotfill ne% 1
                         \end{enumerate} % Resp c
-                        \pagebreak
+                        \medskip
                 \item $(\forall x) [P(x) \vee Q(x)] \rightarrow (\forall x)P(x) \vee (\exists y)Q(y)$ % d
-
-                    \textbf{Rescrevendo e provando validade:}
-
+                
+                    \textbf{Rescrevendo e testando validade:}
+                    
                     \begin{minipage}{0.30\textwidth}
-                        \begin{enumerate}[label=\arabic*. , itemsep=0.7ex , rightmargin=\dimexpr\linewidth-5.7cm-\leftmargin\relax] % Resp d
-                            \item $[P(x) \vee Q(a)] \rightarrow P(x) \vee Q(a)$ \hfill (ei,ui) % 1
-                            \item $P(x) \vee Q(a) = \texttt{V}$ % 2
-                            \item $P(x) \vee Q(a) = \texttt{F}$ % 3
+                        \begin{enumerate}[label=\arabic*. , itemsep=1.5ex , rightmargin=\dimexpr\linewidth-6.5cm-\leftmargin\relax] % Resp d
+                            \item Se $(\forall x)P(x) = \texttt{V}$ frase sempre será valida.% 1
+                            
+                            \vspace{1ex}
+                            \hspace{-1.7em} \textbf{Assumindo que:} $(\forall x)[P(x)$ = \texttt{F}
+                            \item  $(\forall x)Q(x)\rightarrow(\exists y)Q(y)$ % 2
+                            \item \textbf{Se} $(\forall x)Q(x) = \texttt{V}$\\\textbf{não é possível} que $(\exists y)Q(y) = \texttt{V}$ % 3
+                            \item $\texttt{V} \rightarrow \texttt{F} = \texttt{F}$ % 4
                         \end{enumerate} % Resp d
                     \end{minipage}
                     \hspace{.6cm}
-                    \begin{minipage}{0.45\textwidth} % Resp d
-                        \vspace{0ex}
-                        Não é possível provar a afirmação falsa, já que para isso teríamos as condições 2,3 como validas, porém elas são iguais, portanto não podem ter valores verdade diferentes.
+                    \begin{minipage}{0.4\textwidth} % Resp d
+                        \vspace{-24ex}
+                        Como demonstrado existe um caso em que a afirmação será sempre falsa.
                     \end{minipage} % Resp d
             \end{enumerate} % Itens P.1
             \bigskip
         \item Considere a fbf a seguir: % P.2
             \begin{center}
                 $(\exists x)P(x) \wedge (\exists x)Q(x) \rightarrow (\exists x)[P(x) \wedge Q(x)]$
-            \end{center}
+            \end{center} 
             \medskip
             \begin{enumerate} % Itens P.2
                 \item Encontrar uma interpretação em que esta fbf não é válida. % a
-
+                
                     \textbf{Resposta:} Existe no mínimo uma flor com pétalas no jardim e existe no mínimo uma flor queimada no jardim então existe uma flor com pétalas e queimada no jardim.
                 \item Encontrar a falha na seguinte “demonstração” desta fbf: % b
-
+            
                     \begin{minipage}{0.30\textwidth}
                         \begin{enumerate}[label=\arabic*. , itemsep=.3ex , leftmargin=0cm , rightmargin=\dimexpr\linewidth-5cm-\leftmargin\relax] % Prova enunciado b
                             \item $(\exists x)P(x)$ \dotfill (hip.) % 1
@@ -130,7 +132,7 @@ Métodos de prova em lógica de predicados}
                         \item $P(x) \vee Q(x)$ \dotfill 2, add % 3
                         \item $(\forall x)[P(x) \vee Q(x)]$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill 3, ug % 4
                     \end{enumerate} % Resp a
-                    \smallskip
+                    \pagebreak
                 \item $(\forall x)P(x) \wedge (\exists x)Q(x) \rightarrow (\exists x)[P(x) \wedge Q(x)]$ % b
                     \vspace{-2pt}
                     \begin{multicols}{2}
@@ -174,19 +176,45 @@ Métodos de prova em lógica de predicados}
                     \begin{center}
                         $(\exists x)[A(x) \wedge \neg M(x)] \wedge (\forall x)[O(x) \rightarrow M(x)] \wedge (\forall x)[O(x) \vee L(x)] \rightarrow (\exists x)[A(x) \wedge L(x)]$
                     \end{center}
-
+                    
                 \item Todo membro do conselho vem da indústria ou do governo. Todos do governo que são advogados são a favor da moção. John não é da indústria, mas é advogado. Portanto, se John for um membro do conselho, ele será a favor da moção $(M(x), I(x), G(x), A(x), F(x),j)$.\smallskip \\
-                Dica: Para resolver problemas do tipo (lógica proposicional ou de predicados) como $A \wedge B \wedge C \rightarrow D \rightarrow E$, notar que a expressão pode ser reescrita como $\neg(A \wedge B \wedge C) \vee (\neg D \vee E)$ que, por sua vez, pode ser escrita como $(\neg A \vee \neg B \vee \neg C)\vee(\neg D \vee E)$ e também como $(\neg A \vee \neg B \vee \neg C \vee \neg D) \vee E$ e, finalmente, como $A \wedge B \wedge C \wedge D \rightarrow E$. Em outras palavras, nesse tipo de forma (somente nesse), a fbf $D$ também pode ser admitida como uma hipótese % b
-
+                Dica: Para resolver problemas do tipo (lógica proposicional ou de predicados) como $A \wedge B \wedge C \rightarrow D \rightarrow E$, notar que a expressão pode ser reescrita como $\neg(A \wedge B \wedge C) \vee (\neg D \vee E)$ que, por sua vez, pode ser escrita como $(\neg A \vee \neg B \vee \neg C)\vee(\neg D \vee E)$ e também como $(\neg A \vee \neg B \vee \neg C \vee \neg D) \vee E$ e, finalmente, como $A \wedge B \wedge C \wedge D \rightarrow E$. Em outras palavras, nesse tipo de forma (somente nesse), a fbf $D$ também pode ser admitida como uma hipótese. % b
+                    \begin{center}
+                        $(\forall x)(M(x)\rightarrow I(x)\vee G(x)) \wedge (\forall x)(G(x)\wedge A(x) \rightarrow F(x)) \wedge (\neg I(j) \wedge A(j)) \rightarrow (M(j) \rightarrow F(j))$
+                    \end{center} % Prova b
+                    \begin{enumerate}[label=\arabic*. ,itemsep=-1.1ex , leftmargin=1.2cm ,rightmargin=\dimexpr\linewidth-6.5cm-\leftmargin]
+                        \item $(\forall x)(M(x)\rightarrow I(x)\vee G(x))$\dotfill (hip.) % 1
+                        \item $(\forall x)(G(x)\wedge A(x) \rightarrow F(x))$\dotfill (hip.) % 2
+                        \item $(\neg I(j) \wedge A(j))$ \dotfill (hip.) % 3
+                        \item $(M(j)$ \dotfill (hip.)% 4
+                        \vspace{2pt}
+                        \item %TODO - Continuar resolução...
+                    \end{enumerate} % Prova b
                 \item Há uma estrela de cinema que é mais rica que as outras. Todo mundo que é mais rico que os outros também paga mais impostos que os outros. Portanto, existe uma estrela de cinema que paga mais impostos que os outros $(E(x), R(x, y), I(x, y))$. % c
                     \begin{center}
-                        $(\exists x)[E(x) \wedge R(x,y)] \wedge (\forall x)[R(x,y) \rightarrow I(x,y)] \rightarrow (\exists x)[E(x) \wedge I(x,y)]$
+                        $(\exists x)(\forall y)[E(x) \wedge R(x,y)] \wedge (\forall x)(\forall y)[R(x,y) \rightarrow I(x,y)] \rightarrow (\exists x)(\forall y)[E(x) \wedge I(x,y)]$
                     \end{center}
-
+                    \begin{multicols}{2}
+                        \begin{enumerate}[label=\arabic*. , itemsep=-1.1ex , leftmargin=1.2cm ,rightmargin=\dimexpr\linewidth-6.5cm-\leftmargin] % Prova c
+                            \item $(\exists x)(\forall y)[E(x) \wedge R(x,y)]$ \dotfill (hip.) % 1
+                            \item $(\forall x)(\forall y)[R(x,y) \rightarrow I(x,y)]$ \dotfill (hip.) % 2
+                            \item $(\forall y)[E(a) \wedge R(a,y)]$ \dotfill 1, ei % 3
+                            \item $[E(a) \wedge R(a,z)]$ \dotfill 3, ui % 4
+                            \item $(\forall x)[R(x,z) \rightarrow I(x,z)]$ \dotfill 2 ui % 5
+                            \item $R(a,z) \rightarrow I(a,z)$ \dotfill 5, ui % 6
+                            \item $R(a,z)$ \dotfill 4, sim % 7
+                            \item $I(a,z)$ \dotfill 6, mp % 8
+                            \item $E(a)$ \dotfill 4, sim % 9
+                            \item $E(a) \wedge I(a,z)$ \dotfill 8,9, conj % 10
+                            \item $E(a) \vee (\forall y)(I(a,y)$ \dotfill 10, ug % 11
+                            \item $(\exist x)E(x) \vee (\forall y)(I(x,y)$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill 11, eg % 12
+                        \end{enumerate} % Prova c
+                    \end{multicols}
+                    
                 \item Todo estudante da Ciência da Computação trabalha mais que alguém e todo mundo que trabalha mais que alguém também dorme menos que esta pessoa. Maria é uma estudante da Ciência da Computação. Portanto Maria dorme menos que outra pessoa $(E(x), T(x, y), D(x, y), m)$. % d
-
+                    
                 \item Todo embaixador fala apenas com diplomatas e algum embaixador fala com alguém, portanto existe um diplomata $(E(x), F(x, y), D(x))$. % e
-
+                    
             \end{enumerate} % Itens P.4
     \end{enumerate} % Perguntas Lista 4
 \end{document}
