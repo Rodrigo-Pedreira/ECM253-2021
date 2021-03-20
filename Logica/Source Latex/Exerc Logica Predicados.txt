@@ -25,7 +25,7 @@ Lógica de Predicados}
 \begin{document}
     \maketitle
     {\large \textbf{Alunos:}}
-
+        
     \begingroup % tabular
         \setlength{\tabcolsep}{20pt}
         \renewcommand{\arraystretch}{1.5}
@@ -50,26 +50,26 @@ Lógica de Predicados}
                 \item \textit{k} for “Kathy.”
             \end{itemize} % Condições do enunciado
             \end{multicols}
-
+            
             Pede-se: traduzir em português as fbfs a seguir:
             \begin{enumerate} % Itens da P.1
                 \item $E(j) \wedge G(k,j)$ % a
-
+                
                     \textbf{Resposta:} John é elegante e Kathy gosta de Jonh.
                 \item $(\forall x)[H(x) \rightarrow E(x)]$ % b
-
+                
                     \textbf{Resposta:} Todos os homens são elegantes.
                 \item $(\forall x) (M(x) \rightarrow (\forall y)[G(x,y) \rightarrow E(y) \wedge H(y)]$ % c
-
+                
                     \textbf{Resposta:} Mulheres gostam somente de homens elegantes.
                 \item $(\exists x)[H(x) \wedge E(x) \wedge G(x,k)]$ % d
-
+                
                     \textbf{Resposta:} Pelo menos um homem elegante gosta de Kathy.
                 \item $(\exists x) M(x) \wedge B(x) \wedge (\forall y)[G(x,y)\rightarrow E(y) \wedge H(y)]$ % e
-
+                
                     \textbf{Resposta:} Há no mínimo uma mulher bonita que gosta somente de homens elegantes.
                 \item $(\forall x) [M(x) \wedge B(x) \rightarrow G(j,x)]$ % f
-
+                
                     \textbf{Resposta:} John gosta de mulheres bonitas.
             \end{enumerate} % Itens da P.1
             \bigskip
@@ -82,7 +82,7 @@ Lógica de Predicados}
                 \medskip
                 \item  Há uma estrela de cinema que é mais rica que as outras. Todo mundo que é mais rico que os outros também paga mais impostos que os outros. Portanto, existe uma estrela de cinema que paga mais impostos que os outros $(E(x), R(x,y), I(x,y))$. % b
                     \begin{center}
-                        $(\exists x)[E(x) \wedge R(x,y)] \wedge (\forall x)[R(x,y) \rightarrow I(x,y)] \rightarrow (\exists x)[E(x) \wedge I(x,y)]$
+                        $(\exists x)(\forall y)[E(x) \wedge R(x,y)] \wedge (\forall x)(\forall y)[R(x,y) \rightarrow I(x,y)] \rightarrow (\exists x)(\forall y)[E(x) \wedge I(x,y)]$
                     \end{center}
             \end{enumerate} % Itens P.2
     \end{enumerate} % Perguntas Lista 3
