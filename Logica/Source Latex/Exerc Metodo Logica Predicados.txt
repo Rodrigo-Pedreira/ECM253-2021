@@ -185,10 +185,18 @@ Métodos de prova em lógica de predicados}
                     \begin{enumerate}[label=\arabic*. ,itemsep=-1.1ex , leftmargin=1.2cm ,rightmargin=\dimexpr\linewidth-6.5cm-\leftmargin]
                         \item $(\forall x)(M(x)\rightarrow I(x)\vee G(x))$\dotfill (hip.) % 1
                         \item $(\forall x)(G(x)\wedge A(x) \rightarrow F(x))$\dotfill (hip.) % 2
-                        \item $(\neg I(j) \wedge A(j))$ \dotfill (hip.) % 3
-                        \item $(M(j)$ \dotfill (hip.)% 4
+                        \item $\neg I(j) \wedge A(j)$ \dotfill (hip.) % 3
+                        \item $M(j)$ \dotfill (hip.)% 4
                         \vspace{2pt}
-                        \item %TODO - Continuar resolução...
+                        \item $M(j)\rightarrow I(j)\vee G(j)$ \dotfill 1, ui % 5
+                        \item $G(j)\wedge A(j) \rightarrow F(j)$ \dotfill 2, ui % 6
+                        \item $\neg I(j)$ \dotfill 3, sim % 7
+                        \item $A(j)$ \dotfill 3, sim % 8
+                        \item $I(j)\vee G(j)$ \dotfill 4,5, mp % 9
+                        \item $\neg I(j)\rightarrow G(j)$ \dotfill 9, imp % 10
+                        \item $G(j)$ \dotfill 7,10, mp % 11
+                        \item $A(j) \wedge G(j)$ \dotfill 8,11 con % 12
+                        \item $F(j)$ \dotfill 12,16, mp % 13
                     \end{enumerate} % Prova b
                 \item Há uma estrela de cinema que é mais rica que as outras. Todo mundo que é mais rico que os outros também paga mais impostos que os outros. Portanto, existe uma estrela de cinema que paga mais impostos que os outros $(E(x), R(x, y), I(x, y))$. % c
                     \begin{center}
