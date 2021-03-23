@@ -176,7 +176,22 @@ Métodos de prova em lógica de predicados}
                     \begin{center}
                         $(\exists x)[A(x) \wedge \neg M(x)] \wedge (\forall x)[O(x) \rightarrow M(x)] \wedge (\forall x)[O(x) \vee L(x)] \rightarrow (\exists x)[A(x) \wedge L(x)]$
                     \end{center}
-                    
+                     \begin{enumerate}[label=\arabic*. ,itemsep=-1.1ex , leftmargin=1.2cm ,rightmargin=\dimexpr\linewidth-6.5cm-\leftmargin]
+                        \item $(\exists x)[A(x) \wedge \neg M(x)]$\dotfill (hip.) % 1
+                        \item $(\forall x)[O(x)\rightarrow M(x)]$\dotfill (hip.) % 2
+                        \item $(\forall x) [O(x) \vee L(x)]$ \dotfill (hip.) % 3
+                        \item $A(a) \wedge \neg M(a)$ \dotfill (1, ei)% 4
+                        \vspace{2pt}
+                        \item $O(a) \rightarrow M(a)$ \dotfill (2, ui) % 5
+                        \item $O(a) \vee L(a) $ \dotfill (3, ui) % 6
+                        \item $\neg M(a))$ \dotfill (4, sim) % 7
+                        \item $\neg O(a)$ \dotfill (5, 6, mt) % 8
+                        \item $\neg O(a) \rightarrow L(a) $ \dotfill (6, imp) % 9
+                        \item $L(a)$ \dotfill (8, 9, mp) % 10
+                        \item $A(a)$ \dotfill (4, sim) % 11
+                        \item $A(a) \wedge L(a)$ \dotfill (10,11 con) % 12
+                        \item $(\exists x) [A(x) \wegde L(x)]$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill (12, eg) % 13
+                    \end{enumerate} % Prova a
                 \item Todo membro do conselho vem da indústria ou do governo. Todos do governo que são advogados são a favor da moção. John não é da indústria, mas é advogado. Portanto, se John for um membro do conselho, ele será a favor da moção $(M(x), I(x), G(x), A(x), F(x),j)$.\smallskip \\
                 Dica: Para resolver problemas do tipo (lógica proposicional ou de predicados) como $A \wedge B \wedge C \rightarrow D \rightarrow E$, notar que a expressão pode ser reescrita como $\neg(A \wedge B \wedge C) \vee (\neg D \vee E)$ que, por sua vez, pode ser escrita como $(\neg A \vee \neg B \vee \neg C)\vee(\neg D \vee E)$ e também como $(\neg A \vee \neg B \vee \neg C \vee \neg D) \vee E$ e, finalmente, como $A \wedge B \wedge C \wedge D \rightarrow E$. Em outras palavras, nesse tipo de forma (somente nesse), a fbf $D$ também pode ser admitida como uma hipótese. % b
                     \begin{center}
@@ -196,7 +211,7 @@ Métodos de prova em lógica de predicados}
                         \item $\neg I(j)\rightarrow G(j)$ \dotfill 9, imp % 10
                         \item $G(j)$ \dotfill 7,10, mp % 11
                         \item $A(j) \wedge G(j)$ \dotfill 8,11 con % 12
-                        \item $F(j)$ \dotfill 12,16, mp % 13
+                        \item $F(j)$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill 12,16, mp % 13
                     \end{enumerate} % Prova b
                 \item Há uma estrela de cinema que é mais rica que as outras. Todo mundo que é mais rico que os outros também paga mais impostos que os outros. Portanto, existe uma estrela de cinema que paga mais impostos que os outros $(E(x), R(x, y), I(x, y))$. % c
                     \begin{center}
@@ -215,13 +230,47 @@ Métodos de prova em lógica de predicados}
                             \item $E(a)$ \dotfill 4, sim % 9
                             \item $E(a) \wedge I(a,z)$ \dotfill 8,9, conj % 10
                             \item $E(a) \vee (\forall y)(I(a,y)$ \dotfill 10, ug % 11
-                            \item $(\exist x)E(x) \vee (\forall y)(I(x,y)$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill 11, eg % 12
+                            \item $(\exist x)E(x) \vee (\forall y)(I(x,y)$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$}\dotfill 11, eg % 12
                         \end{enumerate} % Prova c
                     \end{multicols}
                     
                 \item Todo estudante da Ciência da Computação trabalha mais que alguém e todo mundo que trabalha mais que alguém também dorme menos que esta pessoa. Maria é uma estudante da Ciência da Computação. Portanto Maria dorme menos que outra pessoa $(E(x), T(x, y), D(x, y), m)$. % d
+                \begin{center}
+                        $\forall (x) \exists (y)[E(x) \rightarrow T(x,y)]\wedge \forall (x) \exists (y)[T(x,y)\rightarrow D(x,y)] \wedge E(m) \rightarrow \exists (y) [D(m,y]$
+                    \end{center}
+                     \begin{enumerate}[label=\arabic*. ,itemsep=-1.1ex , leftmargin=1.2cm ,rightmargin=\dimexpr\linewidth-6.5cm-\leftmargin]
+                        \item $\forall (x) \exists (y)[E(x) \rightarrow T(x,y)]$\dotfill (hip.) % 1
+                        \item $\forall (x) \exists (y)[T(x,y)\rightarrow D(x,y)]$\dotfill (hip.) % 2
+                        \item $E(m)$ \dotfill (hip.) % 3
+                        \item $\exists (y)[E(m) \rightarrow T(m,y)]$ \dotfill (1, ui)% 4
+                        \vspace{2pt}
+                        \item $E(m) \rightarrow T(m,a)$ \dotfill (4, ei) % 5
+                        \item $\exists (y)[T(m,y)\rightarrow D(m,y)]$ \dotfill (2, ui) % 6
+                        \item $T(m,a)\rightarrow D(m,a)$ \dotfill (6, ei) % 7
+                        \item $T(m,a)$ \dotfill (3, 5, mp) % 8
+                        \item $D(m,a)$ \dotfill (7, 8, mp) % 9
+                        \item $\exists (y) D(m,y)$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill (9, eg) % 10
+                    \end{enumerate} % Prova d
                     
                 \item Todo embaixador fala apenas com diplomatas e algum embaixador fala com alguém, portanto existe um diplomata $(E(x), F(x, y), D(x))$. % e
+                 \begin{center}
+                        $\forall (x) \exists (y)[E(x) \wedge (F(x,y) \rightarrow D(x))]\wedge \exists (x) \exists (y)[E(x) \rightarrow F(x,y)]\rightarrow \exists (x) [D(x)]$
+                    \end{center}
+                     \begin{enumerate}[label=\arabic*. ,itemsep=-1.1ex , leftmargin=1.2cm ,rightmargin=\dimexpr\linewidth-6.5cm-\leftmargin]
+                        \item $\forall (x) \exists (y)[E(x) \wedge (F(x,y) \rightarrow D(x))]$\dotfill (hip.) % 1
+                        \item $\exists (x) \exists (y)[E(x) \rightarrow F(x,y)]$\dotfill (hip.) % 2
+                        \item $\exists (y)[E(a) \wedge (F(a,y) \rightarrow D(a))]$ \dotfill (1, ui) % 3
+                        \item $E(a) \wedge (F(a,b) \rightarrow D(a))$ \dotfill (3, ei)% 4
+                        \vspace{2pt}
+                        \item $\exists (y)[E(a) \rightarrow F(a,y)])$ \dotfill (2, ei) % 5
+                        \item $E(a) \rightarrow F(a,b)$ \dotfill (5, ei) % 6
+                        \item $E(a)$ \dotfill (4, sim) % 7
+                        \item $F(a,b)$ \dotfill (6, 7, mp) % 8
+                        \item $F(a,b) \rightarrow D(a)$ \dotfill (4, sim) % 9
+                        \item $D(a)$ \dotfill (8,9, mp) % 10
+                        \item $\exists (x) D(x)$ \hspace{0.2em}{\scriptsize$ _{\qedsymbol}$} \dotfill (9, eg) % 11
+                    \end{enumerate} % Prova d
+                    
                     
             \end{enumerate} % Itens P.4
     \end{enumerate} % Perguntas Lista 4
