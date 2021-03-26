@@ -40,8 +40,7 @@ Prova de corretude de programas}
     \endgroup % tabular
     \bigskip
     \begin{enumerate} % Perguntas Lista 3
-        \item De acordo com o axioma da atribuição, qual a pré-condição do seguinte trecho
-de programa? Explique por que ele funciona.\vspace{5mm}\\% P.1 
+        \item De acordo com o axioma da atribuição, qual a pré-condição do seguinte trecho de programa? Explique por que ele funciona.\vspace{5mm}\\% P.1 
             \fbox{\begin{minipage}{15em} 
             
                 \{ pré-condição : y =  x - 2 \} \\
@@ -56,8 +55,7 @@ de programa? Explique por que ele funciona.\vspace{5mm}\\% P.1
             
             \vspace{60mm}
     
-        \item De acordo com o axioma da atribuição, qual a pré-condição do seguinte trecho
-de programa? Explique por que ele funciona.\vspace{5mm}\\% P.1 
+        \item De acordo com o axioma da atribuição, qual a pré-condição do seguinte trecho de programa? Explique por que ele funciona.\vspace{5mm}\\% P.1 
             \fbox{\begin{minipage}{15em} 
             
                 \{ pré-condição : \} \\
@@ -73,8 +71,7 @@ de programa? Explique por que ele funciona.\vspace{5mm}\\% P.1
             \vspace{10mm}
             
             
-        \item Verificar a correção do seguinte trecho de programa com a pré-condição e pós-condição
-mostradas: \vspace{5mm}\\% P.1 
+        \item Verificar a correção do seguinte trecho de programa com a pré-condição e pós-condição mostradas: \vspace{5mm}\\% P.1 
             \fbox{\begin{minipage}{15em} 
             
                 \{ y = 0 \} \\
@@ -98,8 +95,7 @@ mostradas: \vspace{5mm}\\% P.1
             \vspace{70mm}
             
             
-        \item Verificar a correção do seguinte trecho de programa com a pré-condição e pós-condição
-mostradas: \vspace{5mm}\\% P.1 
+        \item Verificar a correção do seguinte trecho de programa com a pré-condição e pós-condição mostradas: \vspace{5mm}\\% P.1 
             \fbox{\begin{minipage}{15em}
             
                 \{ x = 7 \} \\
@@ -122,9 +118,7 @@ mostradas: \vspace{5mm}\\% P.1
             \vspace{10mm}
             
             
-        \item Demonstre que o trecho de programa a seguir, em Python, está correto, provando
-que Q é uma invariante de laço e calculando o seu valor quando o laço
-é encerrado. \vspace{5mm}\\% P.1 
+        \item Demonstre que o trecho de programa a seguir, em Python, está correto, provando que Q é uma invariante de laço e calculando o seu valor quando o laço é encerrado. \vspace{5mm}\\% P.1 
             \fbox{\begin{minipage}{17em} 
             
             
@@ -150,5 +144,62 @@ que Q é uma invariante de laço e calculando o seu valor quando o laço
             \vspace{3mm}\newline \textcolor{blue}{$\{x = 7 \wedge x > 0\} y \leftarrow 2 $*$ x \{y = 14\}$} \\
             
             \textbf {No segundo caso apresentado, usando a regra de atribuição, chega-se a um antecedente que é  \textcolor{blue}{$y \leftarrow 2 $*$ 7 $} ou apenas \textcolor{blue}{$y = 14$} e portanto \texttt{Verdadeira}.}
+            \pagebreak
+        \item Provar que o segmento de programa é correto encontrando e demonstrando ainvariante do laço Q apropriada e computando Q ao fim do laço. % P. 6
+        
+            \vspace{5mm} 
+            \fbox{\begin{minipage}{15cm} 
+                \textcolor{gray}{\# Função: polinomio\\
+                \# Sinopse: Função para calcular o valor do polinomio\\
+                \# $a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$\\}
+                \textbf{def} poli(a,x):\\
+                $n =$ \textbf{len}(a)\\
+                $i = 0$\\
+                $j = 0$\\
+                \textbf{while} $i<n:$\\
+                $j=j*x+a_{n-i-1}$\\
+                $i=i+1$\\
+                \textbf{return} $j$
+            \end{minipage}}
+            %\vspace{10pt}
+            \begin{flushleft}
+                \setlength{\baselineskip}{20pt}    % Espaço entre linhas
+                \setlength{\parskip}{1.3em}        % Espaço entre paragrafos, se alterar o resto adicione \begingroup antes do begin flush e um \end group apos o end flush. Deveria arrumar, mas o flush ja deveria ser um grupo e normalmente essas alteracoes sao restritas ao grupo.
+                
+                Pre-condições: ${n>i} \vee {n>0}$
+                
+                Analise de iterações (k é o contador de iterações, zero significa que não entrou no laço):
+                
+                P/ $k = 0$:(condições iniciais, ainda fora do laço):\\
+                $i_0=0,j_0=a_{n-i_0-1}$
+                
+                P/ $k = 1$:\\
+                $i_1=i_0+1=1,j_1=j_0x+a_{n-i_1-1}=a_{n-i_0-1}x+a_{n-i_1-1}$
+                
+                P/ $k = 2$:\\
+                $i_2=i_1+1=2,j_2=j_1x+a_{n-i_2-1}=(a_{n-i_0-1}x+a_{n-i_1-1})x+a_{n-i_2-1}$\\
+                $j_2=a_{n-i_0-1}x^2+a_{n-i_1-1}x+a_{n-i_2-1}$
+                
+                Teste c/ valores concretos: $a=$[1 2 3] e $n = 3$\\
+                Substituindo em $k=2$: \hspace{3pt} $a_2x^2+a_1x+a_0$\\
+                $3x^2+2x+1$
+                
+                Generalizando:
+                
+                Proposta: $Q(k): j_k=\sum_{m=0}^{k}a_{n-i_m-1}x^{k-m}$\\
+                Provando por indução finita: $k=0$\\
+                $Q(0): j_0=\sum_{m=0}^{0}a_{n-i_0-1}x^{0-0}=a_{n-i_0-1}$ \hspace{4pt} ,caso é concreto.
+                
+                Passo indutivo: Asumir que $Q(k)$ é verdadeiro.\\
+                $j_k=\sum_{m=0}^{k}a_{n-i_m-1}x^{k-m}$
+                
+                Provar que $Q(k+1)$ é verdadeiro.\hspace{2em} Lembrando que: $i_{k+1}=i_k+1$\\
+                $j_{k+1}=j_kx+a_{n-i_{k+1}-1}=j_kx+a_{n-i_k}$\\
+                $j_{k+1}=[\sum_{m=0}^{k}a_{n-i_m-1}x^{k-m}]x+a_{n-i_k}$\\
+                $j_{k+1}=\sum_{m=0}^{k}a_{n-i_m-1}x^{k+1-m}+a_{n-i_k}$\\
+                $j_{k+1}=a_{n-i_0-1}x^{k+1}+a_{n-i_1-1}x^{k}...$ $a_{n-i_k-1}x^1+a_{n-i_k}$\\
+                $j_{k+1}=\sum_{m=0}^{k+1}a_{n-i_m-1}x^{k+1-m}$\\
+                $j_{k+1}=Q(k+1)$
+            \end{flushleft}
     \end{enumerate} % Perguntas Lista 3
 \end{document}
