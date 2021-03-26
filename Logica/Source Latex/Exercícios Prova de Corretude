@@ -1,0 +1,154 @@
+\documentclass{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{fullpage,enumitem,amssymb,amsmath,xcolor}
+\usepackage{parskip}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\setlength{\parskip}{1em}
+\usepackage{siunitx}
+\usepackage{setspace}
+
+
+
+\title{ECM253 – Linguagens Formais, Autômatos e Compiladores
+
+Lista de Exercícios
+
+Prova de corretude de programas}
+\author{Marco Furlan}
+\date{Março 2021}
+
+\begin{document}
+    \maketitle
+    {\large \textbf{Alunos:}}
+        
+    \begingroup % tabular
+        \setlength{\tabcolsep}{20pt}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{lc} % Alunos
+            Rodrigo Machado Pedreira & 18.01569-7\\
+            Lucas Pedreira Barreto & 17.01106-0\\
+        \end{tabular} % Alunos
+    \endgroup % tabular
+    \bigskip
+    \begin{enumerate} % Perguntas Lista 3
+        \item De acordo com o axioma da atribuição, qual a pré-condição do seguinte trecho
+de programa? Explique por que ele funciona.\vspace{5mm}\\% P.1 
+            \fbox{\begin{minipage}{15em} 
+            
+                \{ pré-condição : y =  x - 2 \} \\
+                
+                \textcolor{blue}{\{y - 1 = x + 1\}}\\
+                
+                \hspace{10mm} $x \leftarrow x + 1;$ \\
+                 
+                \{$ x = y - 1$\} \\
+            \end{minipage}}
+            \vspace{3mm}\newline \textbf{O programa funciona, pois ao executá-lo, nota-se que x recebe y + 2 e resulta na pós-condição proposta no exercício.}
+            
+            \vspace{60mm}
+    
+        \item De acordo com o axioma da atribuição, qual a pré-condição do seguinte trecho
+de programa? Explique por que ele funciona.\vspace{5mm}\\% P.1 
+            \fbox{\begin{minipage}{15em} 
+            
+                \{ pré-condição : \} \\
+                
+                \textcolor{blue}{ \{y = 2 * x\} }\\
+                
+                \hspace{10mm} {x \leftarrow 2 $*$ x}; \\
+                 
+                \{$ x > y$\} \\
+            \end{minipage}}
+            \vspace{3mm}\newline \textbf{ O programa funciona, pois como y é sempre metade de x, então sempre será menor que x.}
+            
+            \vspace{10mm}
+            
+            
+        \item Verificar a correção do seguinte trecho de programa com a pré-condição e pós-condição
+mostradas: \vspace{5mm}\\% P.1 
+            \fbox{\begin{minipage}{15em} 
+            
+                \{ y = 0 \} \\
+                
+                \hspace{10mm} \textbf{if} $ y < 5$ \textbf{then}
+                
+                \hspace{15mm} y \leftarrow $y + 1$ 
+                
+                \hspace{10mm} \textbf{else}
+                
+                \hspace{15mm} y\leftarrow 5; \\
+                
+                 
+                \{$y = 1$\} \\
+            \end{minipage}}
+            \vspace{3mm}\newline \textcolor{blue}{\{y = 0 \wedge y < 5\} y \leftarrow y + 1 \{y = 1\}} \\
+            
+            \textbf {No primeiro caso apresentado, usando a regra de atribuição, chega-se a um antecedente que é  \textcolor{blue}{$0 \leftarrow 0 + 1 $} ou apenas \textcolor{blue}{$y = 1$} e portanto \texttt{Verdadeira.}} 
+            
+            
+            \vspace{70mm}
+            
+            
+        \item Verificar a correção do seguinte trecho de programa com a pré-condição e pós-condição
+mostradas: \vspace{5mm}\\% P.1 
+            \fbox{\begin{minipage}{15em}
+            
+                \{ x = 7 \} \\
+                
+                \hspace{10mm} \textbf{if} $x  <= 0$ \textbf{then}
+                
+                \hspace{15mm} y \leftarrow $x$ 
+                
+                \hspace{10mm} \textbf{else}
+                
+                \hspace{15mm} y\leftarrow $2*x$; \\
+                
+                 
+                \{$y = 14$\} \\
+            \end{minipage}}
+            \vspace{3mm}\newline \textcolor{blue}{\vspace{2mm}$\{x = 7 \wedge x > 0\} y \leftarrow 2 $*$ x \{y = 14\}$} \\
+            
+            \textbf {No segundo caso apresentado, usando a regra de atribuição, chega-se a um antecedente que é  \textcolor{blue}{$y \leftarrow 2 $*$ 7 $} ou apenas \textcolor{blue}{$y = 14$} e portanto \texttt{Verdadeira}.}
+            
+            \vspace{10mm}
+            
+            
+        \item Demonstre que o trecho de programa a seguir, em Python, está correto, provando
+que Q é uma invariante de laço e calculando o seu valor quando o laço
+é encerrado. \vspace{5mm}\\% P.1 
+            \fbox{\begin{minipage}{17em} 
+            
+            
+                \textit{\textcolor{gray}{$# Função : potência$}}\\
+                \textit{\textcolor{gray}{$# Sinopse: retornar \ x^y \ para x,y >= 1$}} \\
+               
+                \textbf{def} potencia (x, y):
+               
+                \hspace{10mm} i = 0 
+                
+                \hspace{10mm} j = 1
+                
+                \hspace{10mm} \textbf{while} i != y:
+                
+                \hspace{15mm} j = j * X;
+                
+                \hspace{15mm} i = i + 1;
+                
+                \hspace{10mm}  \textbf{return} j\\
+                 
+                
+            \end{minipage}}
+            \vspace{3mm}\newline \textcolor{blue}{$\{x = 7 \wedge x > 0\} y \leftarrow 2 $*$ x \{y = 14\}$} \\
+            
+            \textbf {No segundo caso apresentado, usando a regra de atribuição, chega-se a um antecedente que é  \textcolor{blue}{$y \leftarrow 2 $*$ 7 $} ou apenas \textcolor{blue}{$y = 14$} e portanto \texttt{Verdadeira}.}
+    \end{enumerate} % Perguntas Lista 3
+\end{document}
