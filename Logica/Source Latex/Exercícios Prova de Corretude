@@ -141,10 +141,41 @@ Prova de corretude de programas}
                  
                 
             \end{minipage}}
-            \vspace{3mm}\newline \textcolor{blue}{$\{x = 7 \wedge x > 0\} y \leftarrow 2 $*$ x \{y = 14\}$} \\
-            
-            \textbf {No segundo caso apresentado, usando a regra de atribuição, chega-se a um antecedente que é  \textcolor{blue}{$y \leftarrow 2 $*$ 7 $} ou apenas \textcolor{blue}{$y = 14$} e portanto \texttt{Verdadeira}.}
-            \pagebreak
+            \medskip
+            \begin{flushleft}
+                \setlength{\baselineskip}{17pt}
+                \setlength{\parskip}{1em}
+                Pre-condições: ${y>=1}$
+                
+                Analise de iterações (k é o contador de iterações, zero significa que não entrou no laço):
+                
+                P/ $k = 0$: (condições iniciais, ainda fora do laço):\\
+                $i_0=0,j_0=1$\smallskip\\
+                P/ $k = 1$:\\
+                $i_1=i_0+1=1,j_1=j_0x=x$\smallskip\\
+                P/ $k = 2$:\\
+                $i_2=i_1+1=2,j_2=j_1x=x^2$\\
+                \pagebreak
+                P/ $k = 3$:\\
+                $i_3=i_2+1=3,j_3=j_2x=x^3$\smallskip\\
+                Teste c/ valores concretos: $x=2$ e $y = 3$\\
+                Substituindo em $k=3$:\\
+                $j_3=2^3=8$
+                
+                Generalizando:\smallskip\\
+                Proposta: $Q(k): j_k=x^{i_k}$\smallskip\\
+                Provando por indução finita: $k=0$\vspace{2pt}\\
+                $Q(0): j_0=x^{i_0}=1$ \hspace{4pt} ,caso é concreto.
+                
+                Passo indutivo: Asumir que $Q(k)$ é verdadeiro.\\
+                
+                Provar que $Q(k+1)$ é verdadeiro.\hspace{2em} Lembrando que: $i_{k+1}=i_k+1$\\
+                $j_{k+1}=j_kx$\\
+                $j_{k+1}=x^{i_k}x$\\
+                $j_{k+1}=x^{i_k+1$\\
+                $j_{k+1}=x^{i_{k+1}$\\
+                $j_{k+1}=Q(k+1)$
+            \end{flushleft}
         \item Provar que o segmento de programa é correto encontrando e demonstrando ainvariante do laço Q apropriada e computando Q ao fim do laço. % P. 6
         
             \vspace{5mm} 
@@ -157,11 +188,11 @@ Prova de corretude de programas}
                 $i = 0$\\
                 $j = 0$\\
                 \textbf{while} $i<n:$\\
-                $j=j*x+a_{n-i-1}$\\
+                $j=j*x+a[n-i-1]$\\
                 $i=i+1$\\
                 \textbf{return} $j$
             \end{minipage}}
-            %\vspace{10pt}
+            \medskip
             \begin{flushleft}
                 \setlength{\baselineskip}{20pt}    % Espaço entre linhas
                 \setlength{\parskip}{1.3em}        % Espaço entre paragrafos, se alterar o resto adicione \begingroup antes do begin flush e um \end group apos o end flush. Deveria arrumar, mas o flush ja deveria ser um grupo e normalmente essas alteracoes sao restritas ao grupo.
